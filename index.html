@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--c:#00ffff;--v:#8b5cf6;--a:#f59e0b;--g:#00ff41;--r:#ff4455;--bg:#02020c;--border:rgba(0,255,255,0.14);--bv:rgba(139,92,246,0.2);--tx:#c0d4f0;--dim:#4a5a6a}
+:root{--c:#00ffff;--v:#8b5cf6;--a:#f59e0b;--g:#00ff41;--r:#ff4455;--bg:#02020c;--border:rgba(0,255,255,0.13);--bv:rgba(139,92,246,0.2);--tx:#c0d4f0;--dim:#4a5a6a}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--tx);font-family:'Share Tech Mono',monospace;overflow-x:hidden}
 #bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
@@ -14,11 +14,11 @@ body{background:var(--bg);color:var(--tx);font-family:'Share Tech Mono',monospac
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#050510}::-webkit-scrollbar-thumb{background:linear-gradient(var(--c),var(--v));border-radius:3px}
 
 /* HEADER */
-header{display:flex;align-items:center;justify-content:space-between;padding:16px 36px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;background:rgba(2,2,12,0.92);backdrop-filter:blur(20px)}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 36px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;background:rgba(2,2,12,0.93);backdrop-filter:blur(20px)}
 .logo{display:flex;align-items:center;gap:12px}
 .logo-svg{width:40px;height:40px;filter:drop-shadow(0 0 8px rgba(0,255,255,.5))}
 .logo-name{font-family:'Orbitron',sans-serif;font-size:1.25rem;font-weight:900;background:linear-gradient(135deg,var(--c),var(--v));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.logo-sub{display:block;font-size:.58rem;color:var(--a);letter-spacing:3px;margin-top:-2px;font-family:'Rajdhani',sans-serif;font-weight:700}
+.logo-sub{display:block;font-size:.57rem;color:var(--a);letter-spacing:3px;margin-top:-2px;font-family:'Rajdhani',sans-serif;font-weight:700}
 .hdr-r{display:flex;flex-direction:column;align-items:flex-end;gap:3px}
 .status{display:flex;align-items:center;gap:6px;font-size:.68rem;color:var(--g)}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--g);animation:bl 1.6s ease-in-out infinite}
@@ -36,8 +36,8 @@ h1.brand .ax{color:var(--a)}
 
 /* MODE TOGGLE */
 .mode-bar{display:flex;gap:14px;justify-content:center;margin-bottom:50px;flex-wrap:wrap}
-.mode-btn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 30px;border-radius:12px;border:1px solid var(--border);background:rgba(5,5,20,.8);color:var(--dim);cursor:pointer;transition:all .25s;font-family:'Orbitron',sans-serif;font-size:.73rem;font-weight:700;letter-spacing:1px;min-width:165px}
-.mode-btn small{font-family:'Rajdhani',sans-serif;font-size:.72rem;font-weight:400;letter-spacing:.5px;color:var(--dim)}
+.mode-btn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 30px;border-radius:12px;border:1px solid var(--border);background:rgba(5,5,20,.8);color:var(--dim);cursor:pointer;transition:all .25s;font-family:'Orbitron',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:1px;min-width:165px}
+.mode-btn small{font-family:'Rajdhani',sans-serif;font-size:.7rem;font-weight:400;letter-spacing:.5px;color:var(--dim)}
 .mode-btn.aq{border-color:var(--c);color:var(--c);background:rgba(0,255,255,.06);box-shadow:0 0 24px rgba(0,255,255,.1)}
 .mode-btn.aq small{color:rgba(0,255,255,.6)}
 .mode-btn.ap{border-color:var(--v);color:#a78bfa;background:rgba(139,92,246,.08);box-shadow:0 0 24px rgba(139,92,246,.12)}
@@ -50,38 +50,58 @@ h1.brand .ax{color:var(--a)}
 .sec-ttl.pv{color:#a78bfa}.sec-ttl.pv::before{background:linear-gradient(var(--v),var(--c))}
 
 /* CARD */
-.card{background:rgba(4,4,20,.75);border:1px solid var(--border);border-radius:16px;padding:26px;backdrop-filter:blur(14px)}
+.card{background:rgba(4,4,20,.78);border:1px solid var(--border);border-radius:16px;padding:26px;backdrop-filter:blur(14px)}
 .card.pv{border-color:var(--bv)}
 
-/* API KEY BAR */
-.api-bar{background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.25);border-radius:12px;padding:16px 20px;margin-bottom:18px;display:none;animation:fu .3s ease}
-.api-inner{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.api-lbl{font-size:.68rem;color:#a78bfa;letter-spacing:1.5px;font-family:'Rajdhani',sans-serif;font-weight:700;white-space:nowrap}
-.api-inp{flex:1;min-width:200px;background:rgba(0,0,20,.7);border:1px solid rgba(139,92,246,.3);border-radius:8px;padding:9px 13px;color:#fff;font-family:'Share Tech Mono',monospace;font-size:.78rem;outline:none}
-.api-inp:focus{border-color:var(--v)}.api-inp::placeholder{color:var(--dim)}
-.api-note{font-size:.67rem;color:var(--dim);margin-top:8px;font-family:'Rajdhani',sans-serif}
-.api-note a{color:var(--v);text-decoration:none}
+/* ── API KEY SETUP PANEL ── */
+.api-panel{border:1px solid var(--bv);border-radius:16px;padding:28px;background:rgba(139,92,246,.04);margin-bottom:20px}
+.api-panel-title{font-family:'Orbitron',sans-serif;font-size:.82rem;color:#a78bfa;letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.api-panel-sub{font-size:.78rem;color:var(--dim);font-family:'Rajdhani',sans-serif;margin-bottom:18px;line-height:1.7}
+.api-panel-sub a{color:var(--v);text-decoration:none}
+.api-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.api-inp{flex:1;min-width:200px;background:rgba(0,0,20,.8);border:1px solid rgba(139,92,246,.3);border-radius:9px;padding:12px 16px;color:#fff;font-family:'Share Tech Mono',monospace;font-size:.82rem;outline:none;letter-spacing:1px;transition:border-color .3s}
+.api-inp:focus{border-color:var(--v);box-shadow:0 0 0 3px rgba(139,92,246,.08)}
+.api-inp::placeholder{color:var(--dim)}
+.api-inp.valid{border-color:#00ff88;box-shadow:0 0 0 3px rgba(0,255,136,.06)}
+.api-inp.invalid{border-color:var(--r);box-shadow:0 0 0 3px rgba(255,68,85,.06)}
+.api-status{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:.76rem;font-family:'Rajdhani',sans-serif;min-height:22px}
+.api-status.ok{color:#00ff88}.api-status.err{color:var(--r)}.api-status.checking{color:var(--a)}
+
+/* KEY SAVED BADGE */
+.key-saved-bar{display:none;align-items:center;justify-content:space-between;padding:12px 18px;background:rgba(0,255,136,.05);border:1px solid rgba(0,255,136,.25);border-radius:12px;margin-bottom:18px;animation:fu .3s ease}
+.ksb-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#00ff88;font-family:'Rajdhani',sans-serif;font-weight:700}
+.ksb-model{font-size:.68rem;color:var(--dim);font-family:'Share Tech Mono',monospace;margin-left:4px}
+.ksb-change{font-size:.7rem;color:var(--v);cursor:pointer;text-decoration:underline;font-family:'Rajdhani',sans-serif;white-space:nowrap}
 
 /* URL ROW */
 .url-row{display:flex;gap:10px;margin-bottom:12px}
-.url-inp{flex:1;background:rgba(0,0,20,.7);border:1px solid var(--border);border-radius:10px;padding:13px 17px;color:#fff;font-family:'Share Tech Mono',monospace;font-size:.86rem;outline:none;transition:border-color .3s,box-shadow .3s}
+.url-inp{flex:1;background:rgba(0,0,20,.7);border:1px solid var(--border);border-radius:10px;padding:13px 17px;color:#fff;font-family:'Share Tech Mono',monospace;font-size:.85rem;outline:none;transition:border-color .3s,box-shadow .3s}
 .url-inp:focus{border-color:var(--c);box-shadow:0 0 0 3px rgba(0,255,255,.07)}
 .card.pv .url-inp:focus{border-color:var(--v);box-shadow:0 0 0 3px rgba(139,92,246,.08)}
 
+/* LOCKED OVERLAY */
+.locked-msg{text-align:center;padding:32px 20px;border:1px dashed rgba(139,92,246,.25);border-radius:12px;color:var(--dim);font-family:'Rajdhani',sans-serif}
+.locked-msg .lock-icon{font-size:2rem;margin-bottom:10px}
+.locked-msg strong{display:block;font-family:'Orbitron',sans-serif;font-size:.82rem;color:#a78bfa;margin-bottom:6px;letter-spacing:.5px}
+.locked-msg span{font-size:.85rem;line-height:1.7}
+
 /* BUTTONS */
-.btn{padding:13px 22px;border:none;border-radius:9px;font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;transition:all .22s}
+.btn{padding:12px 22px;border:none;border-radius:9px;font-family:'Orbitron',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:1.5px;cursor:pointer;transition:all .22s}
 .btn:disabled{opacity:.45;cursor:wait}
 .btn-c{background:linear-gradient(135deg,var(--c),#0088cc);color:#000}
 .btn-c:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,255,255,.3)}
 .btn-v{background:linear-gradient(135deg,var(--v),#4f46e5);color:#fff}
 .btn-v:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,92,246,.35)}
+.btn-g{background:linear-gradient(135deg,#00ff88,#00cc66);color:#000}
+.btn-g:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,255,136,.3)}
+.btn-sm{padding:10px 18px;font-size:.65rem}
 
 /* SCANNING */
-.scanning{display:none;align-items:center;gap:12px;padding:14px 2px;font-size:.8rem;color:var(--c)}
+.scanning{display:none;align-items:center;gap:12px;padding:14px 2px;font-size:.78rem}
 .sb{flex:1;height:2px;background:rgba(0,255,255,.1);border-radius:2px;overflow:hidden}
 .si{height:100%;width:35%;background:linear-gradient(90deg,transparent,var(--c),transparent);animation:sw 1.3s ease-in-out infinite}
 @keyframes sw{0%{transform:translateX(-200%)}100%{transform:translateX(500%)}}
-.scanning.pv{color:#a78bfa}.scanning.pv .sb{background:rgba(139,92,246,.1)}.scanning.pv .si{background:linear-gradient(90deg,transparent,var(--v),transparent)}
+.scanning{color:var(--c)}.scanning.pv{color:#a78bfa}.scanning.pv .sb{background:rgba(139,92,246,.1)}.scanning.pv .si{background:linear-gradient(90deg,transparent,var(--v),transparent)}
 
 /* RESULT */
 .result{display:none;border-radius:12px;margin-top:10px;border:1px solid;padding:20px;animation:fu .35s ease}
@@ -94,10 +114,14 @@ h1.brand .ax{color:var(--a)}
 .warn .rpill{background:rgba(245,158,11,.12);color:var(--a);border:1px solid var(--a)}
 .danger .rpill{background:rgba(255,68,85,.12);color:var(--r);border:1px solid var(--r)}
 .rexp{color:var(--tx);line-height:1.8;margin-bottom:12px;font-family:'Rajdhani',sans-serif;font-size:.92rem}
-.finding{padding:8px 13px;margin:4px 0;background:rgba(255,255,255,.02);border-left:2px solid var(--v);border-radius:0 6px 6px 0;font-size:.78rem;color:#aabbcc}
-.rec{padding:5px 0;font-size:.78rem;color:var(--dim)}.rec::before{content:'▸ ';color:var(--c)}
+.finding{padding:8px 13px;margin:4px 0;background:rgba(255,255,255,.02);border-left:2px solid var(--v);border-radius:0 6px 6px 0;font-size:.79rem;color:#aabbcc}
+.rec{padding:5px 0;font-size:.79rem;color:var(--dim)}.rec::before{content:'▸ ';color:var(--c)}
 .upsell{margin-top:14px;padding:11px 15px;background:rgba(139,92,246,.06);border:1px dashed rgba(139,92,246,.22);border-radius:8px;font-size:.77rem;color:#a78bfa;font-family:'Rajdhani',sans-serif}
 .upsell span{color:var(--v);cursor:pointer;text-decoration:underline}
+
+/* TAGS */
+.tag-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.tag{padding:3px 9px;border-radius:5px;font-size:.65rem;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.2);color:#a78bfa}
 
 /* BOT */
 .chat-win{height:320px;overflow-y:auto;padding:16px;background:rgba(0,0,16,.5);border-radius:10px;margin-bottom:12px;border:1px solid var(--bv);scroll-behavior:smooth}
@@ -105,29 +129,29 @@ h1.brand .ax{color:var(--a)}
 .msg{margin-bottom:16px;animation:fu .3s ease}
 .msg-lbl{font-size:.64rem;letter-spacing:1.5px;margin-bottom:4px;font-family:'Rajdhani',sans-serif;font-weight:700}
 .msg.bot .msg-lbl{color:var(--v)}.msg.user .msg-lbl{color:var(--c);text-align:right}
-.msg-body{padding:10px 14px;border-radius:10px;font-size:.81rem;line-height:1.75;max-width:90%}
+.msg-body{padding:10px 14px;border-radius:10px;font-size:.81rem;line-height:1.78;max-width:90%}
 .msg.bot .msg-body{background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.17);border-radius:10px 10px 10px 2px}
 .msg.user .msg-body{background:rgba(0,255,255,.06);border:1px solid rgba(0,255,255,.14);border-radius:10px 10px 2px 10px;margin-left:auto}
 .typ-r{display:none;gap:6px;padding:6px 2px;align-items:center}
 .td{width:6px;height:6px;border-radius:50%;background:var(--v);animation:bo 1.2s ease-in-out infinite}
 .td:nth-child(2){animation-delay:.2s}.td:nth-child(3){animation-delay:.4s}
 @keyframes bo{0%,80%,100%{transform:scale(.5);opacity:.3}40%{transform:scale(1);opacity:1}}
-.td-lbl{font-size:.66rem;color:var(--dim);letter-spacing:1px;margin-left:4px}
+.td-lbl{font-size:.64rem;color:var(--dim);letter-spacing:1px;margin-left:4px}
 .chat-row{display:flex;gap:10px}
 .chat-inp{flex:1;background:rgba(0,0,20,.7);border:1px solid var(--bv);border-radius:9px;padding:11px 14px;color:#fff;font-family:'Share Tech Mono',monospace;font-size:.8rem;outline:none;resize:none;transition:border-color .3s}
 .chat-inp:focus{border-color:var(--v)}.chat-inp::placeholder{color:var(--dim)}
 
 /* COUNTER */
 .ctr-wrap{max-width:900px;margin:0 auto 65px;padding:0 20px}
-.ctr-card{background:linear-gradient(135deg,rgba(0,255,65,.03),rgba(0,255,255,.03));border:1px solid rgba(0,255,65,.15);border-radius:20px;padding:48px 28px 38px;text-align:center;position:relative;overflow:hidden}
+.ctr-card{background:linear-gradient(135deg,rgba(0,255,65,.03),rgba(0,255,255,.03));border:1px solid rgba(0,255,65,.14);border-radius:20px;padding:48px 28px 38px;text-align:center;position:relative;overflow:hidden}
 .ctr-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--g),var(--c),var(--v),var(--a));background-size:200%;animation:sh 3s linear infinite}
 @keyframes sh{0%{background-position:0%}100%{background-position:200%}}
-.ctr-eye{font-size:.68rem;color:var(--g);letter-spacing:3px;margin-bottom:12px;font-family:'Rajdhani',sans-serif;font-weight:700}
+.ctr-eye{font-size:.66rem;color:var(--g);letter-spacing:3px;margin-bottom:12px;font-family:'Rajdhani',sans-serif;font-weight:700}
 .ctr-num{font-family:'Orbitron',sans-serif;font-size:clamp(2.4rem,8vw,4.5rem);font-weight:900;background:linear-gradient(135deg,var(--g),var(--c));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
 .ctr-plus{color:var(--a);-webkit-text-fill-color:var(--a);font-size:.5em;vertical-align:super;margin-left:3px;font-family:'Orbitron',sans-serif}
-.ctr-h{font-family:'Orbitron',sans-serif;font-size:clamp(.78rem,2vw,1rem);color:#cce0ff;margin:14px 0 8px;letter-spacing:.5px}
-.ctr-sub{color:var(--dim);max-width:440px;margin:0 auto 20px;line-height:1.8;font-family:'Rajdhani',sans-serif;font-size:.92rem}
-.ctr-note{font-size:.63rem;color:rgba(74,90,106,.8);margin-top:4px;font-family:'Rajdhani',sans-serif;font-style:italic;margin-bottom:20px}
+.ctr-h{font-family:'Orbitron',sans-serif;font-size:clamp(.76rem,2vw,.95rem);color:#cce0ff;margin:14px 0 8px;letter-spacing:.5px}
+.ctr-sub{color:var(--dim);max-width:440px;margin:0 auto 8px;line-height:1.8;font-family:'Rajdhani',sans-serif;font-size:.92rem}
+.ctr-note{font-size:.62rem;color:rgba(74,90,106,.7);margin-bottom:20px;font-family:'Rajdhani',sans-serif;font-style:italic}
 .cbadge-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .cbadge{padding:7px 15px;border-radius:15px;font-size:.7rem;border:1px solid;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:.5px}
 .cbadge.g{border-color:rgba(0,255,136,.3);color:#00ff88;background:rgba(0,255,136,.05)}
@@ -141,14 +165,14 @@ h1.brand .ax{color:var(--a)}
 .feat::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c),transparent);transform:scaleX(0);transition:transform .45s;transform-origin:center}
 .feat:hover::after{transform:scaleX(1)}
 .ficon{font-size:1.7rem;margin-bottom:10px;display:block}
-.ftitle{font-family:'Orbitron',sans-serif;font-size:.78rem;color:var(--c);margin-bottom:7px;letter-spacing:.5px}
+.ftitle{font-family:'Orbitron',sans-serif;font-size:.77rem;color:var(--c);margin-bottom:7px;letter-spacing:.5px}
 .fdesc{color:var(--dim);line-height:1.7;font-family:'Rajdhani',sans-serif;font-size:.88rem}
 
 /* TIPS */
 .tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:13px}
 .tip{display:flex;gap:13px;padding:16px;background:rgba(139,92,246,.04);border:1px solid var(--bv);border-radius:11px;align-items:flex-start}
 .tnum{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:900;color:rgba(139,92,246,.3);min-width:32px;line-height:1}
-.tip strong{color:#cce0ff;font-size:.78rem;display:block;margin-bottom:4px;font-family:'Orbitron',sans-serif;letter-spacing:.5px}
+.tip strong{color:#cce0ff;font-size:.77rem;display:block;margin-bottom:4px;font-family:'Orbitron',sans-serif;letter-spacing:.5px}
 .tip span{color:var(--dim);line-height:1.65;font-family:'Rajdhani',sans-serif;font-size:.88rem}
 
 /* FOOTER */
@@ -191,17 +215,15 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
 </header>
 
 <div class="hero">
-  <div class="hero-badge">🔴 LIVE &nbsp;|&nbsp; ⚡ AI-POWERED &nbsp;|&nbsp; 🛡️ FREE FOREVER</div>
+  <div class="hero-badge">🔴 LIVE &nbsp;|&nbsp; ⚡ GEMINI AI &nbsp;|&nbsp; 🛡️ FREE FOREVER</div>
   <h1 class="brand"><span class="gc">Ghost</span><span class="gc">Netra</span><span class="ax">X</span></h1>
-  <p class="hero-sub">Advanced cybersecurity platform detecting phishing, malware &amp; malicious URLs. Choose your mode — Quick Scan for instant checks, Premium for full Gemini AI deep analysis &amp; GHOST bot.</p>
+  <p class="hero-sub">Advanced cybersecurity platform detecting phishing, malware &amp; malicious URLs. Choose your mode — Quick Scan for instant heuristic checks, Premium for full Gemini AI deep analysis.</p>
   <div class="mode-bar">
     <button class="mode-btn aq" id="btnQ" onclick="setMode('quick')">
-      ⚡ QUICK SCAN
-      <small>No AI · Heuristic · Instant</small>
+      ⚡ QUICK SCAN<small>No AI · Heuristic · Instant</small>
     </button>
     <button class="mode-btn" id="btnP" onclick="setMode('premium')">
-      🔥 PREMIUM MODE
-      <small>Gemini AI · Deep Analysis · GHOST Bot</small>
+      🔥 PREMIUM MODE<small>Gemini AI · Deep Analysis · GHOST Bot</small>
     </button>
   </div>
 </div>
@@ -222,37 +244,64 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
 <!-- PREMIUM SCAN -->
 <div id="premSec" class="section" style="display:none">
   <div class="sec-ttl pv">🔥 PREMIUM — GEMINI AI DEEP ANALYSIS</div>
-  <div class="api-bar" id="apiBar">
-    <div style="flex:1">
-      <div class="api-inner">
-        <div class="api-lbl">🔑 GEMINI API KEY</div>
-        <input id="apiKey" class="api-inp" type="password" placeholder="Paste your Gemini API key here..." oninput="saveKey()"/>
-        <button class="btn btn-v" style="padding:9px 16px;font-size:.66rem" onclick="toggleKey()">SHOW</button>
-      </div>
-      <div class="api-note">Get your free key at <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a> — needed for Gemini AI scanning and GHOST bot.</div>
+
+  <!-- API KEY SETUP PANEL (shown when no key saved) -->
+  <div class="api-panel" id="apiSetupPanel">
+    <div class="api-panel-title">🔑 SAVE YOUR GEMINI API KEY TO UNLOCK PREMIUM</div>
+    <div class="api-panel-sub">
+      Premium uses <strong style="color:#a78bfa">Gemini 1.5 Flash</strong> — Google's fastest AI model for cybersecurity analysis.<br>
+      Get your free API key at <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a> (free tier, no billing required).<br>
+      Your key is stored locally on your device only — never sent to any server except Google's API.
+    </div>
+    <div class="api-row">
+      <input id="apiKeyInp" class="api-inp" type="password" placeholder="AIza... (paste your Gemini API key)" autocomplete="off" onkeydown="if(event.key==='Enter')validateAndSaveKey()"/>
+      <button class="btn btn-sm" id="showKeyBtn" style="background:rgba(139,92,246,.15);color:#a78bfa;border:1px solid var(--bv)" onclick="toggleKeyVis()">SHOW</button>
+      <button class="btn btn-g btn-sm" id="saveKeyBtn" onclick="validateAndSaveKey()">VALIDATE &amp; SAVE</button>
+    </div>
+    <div class="api-status" id="apiStatus"></div>
+  </div>
+
+  <!-- KEY SAVED BAR (shown when key is valid and saved) -->
+  <div class="key-saved-bar" id="keySavedBar">
+    <div class="ksb-left">
+      ✅ API KEY ACTIVE
+      <span class="ksb-model">· gemini-1.5-flash</span>
+    </div>
+    <span class="ksb-change" onclick="changeKey()">Change Key</span>
+  </div>
+
+  <!-- SCAN AREA — locked until key is saved -->
+  <div id="premLocked" class="card pv" style="display:none">
+    <div class="locked-msg">
+      <div class="lock-icon">🔐</div>
+      <strong>API KEY REQUIRED</strong>
+      <span>Validate and save your Gemini API key above to unlock deep AI scanning and GHOST bot.</span>
     </div>
   </div>
-  <div class="card pv">
+
+  <div id="premUnlocked" class="card pv" style="display:none">
     <div class="url-row">
-      <input id="pUrl" class="url-inp" type="text" placeholder="Paste any URL for full AI threat analysis with Google Search..." autocomplete="off"/>
+      <input id="pUrl" class="url-inp" type="text" placeholder="Paste any URL for full Gemini AI threat analysis..." autocomplete="off"/>
       <button class="btn btn-v" id="pBtn" onclick="premScan()">DEEP SCAN</button>
     </div>
-    <div id="pScan" class="scanning pv"><div class="sb"><div class="si"></div></div><span>Gemini AI scanning with live Google Search...</span></div>
+    <div id="pScan" class="scanning pv"><div class="sb"><div class="si"></div></div><span>Gemini 1.5 Flash analyzing threat vectors...</span></div>
     <div id="pRes"></div>
   </div>
 </div>
 
-<!-- GHOST BOT -->
+<!-- GHOST BOT (premium only, unlocked) -->
 <div id="botSec" class="section" style="display:none">
   <div class="sec-ttl pv">👻 GHOST — CyberSecurity Intelligence AI</div>
   <div class="card pv">
     <div id="chatWin" class="chat-win">
       <div class="msg bot">
-        <div class="msg-lbl">👻 GHOST · PREMIUM AI</div>
-        <div class="msg-body">Agent. I'm <strong>GHOST</strong> — cyber prodigy &amp; AI intelligence engine by GhostNetraX.<br><br>I use Google Search grounding to deliver live threat intel. Ask about SQL injection, phishing, MITM, ransomware, zero-days, or how to defend yourself. I search the web so my answers are always current.<br><br>🛡️ <em>Stay ghost. Stay protected.</em></div>
+        <div class="msg-lbl">👻 GHOST · AI GUARDIAN</div>
+        <div class="msg-body">Agent. I'm <strong>GHOST</strong> — a 19-year-old cyber prodigy and intelligence engine built into GhostNetraX by Amlan Dey.<br><br>
+        I'm powered by <strong>Gemini 1.5 Flash</strong> — trained on real-world cybersecurity intelligence. Ask me about SQL injection, phishing, MITM, ransomware, zero-days, defense strategies, or how to protect yourself online. I'm here 24/7.<br><br>
+        🛡️ <em>Stay ghost. Stay protected.</em></div>
       </div>
     </div>
-    <div id="typRow" class="typ-r"><div class="td"></div><div class="td"></div><div class="td"></div><span class="td-lbl">GHOST IS SEARCHING THE WEB...</span></div>
+    <div id="typRow" class="typ-r"><div class="td"></div><div class="td"></div><div class="td"></div><span class="td-lbl">GHOST IS THINKING...</span></div>
     <div class="chat-row">
       <textarea id="chatInp" class="chat-inp" rows="2" placeholder="Ask about phishing, attacks, defense strategies, latest threats..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMsg()}"></textarea>
       <button class="btn btn-v" onclick="sendMsg()">SEND</button>
@@ -263,15 +312,15 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
 <!-- COUNTER -->
 <div class="ctr-wrap">
   <div class="ctr-card">
-    <div class="ctr-eye">🌍 LIVE PROTECTION COUNT — BETA</div>
+    <div class="ctr-eye">🌍 PROTECTION COUNT — BETA</div>
     <div><span class="ctr-num" id="cNum">0</span><span class="ctr-plus">+</span></div>
     <div class="ctr-h">Interactions Protected By GhostNetraX</div>
-    <p class="ctr-sub">Every visit, every URL scan, every GHOST conversation contributes. Don't hesitate — it's <strong style="color:#cce0ff">trusted, free &amp; AI-powered.</strong></p>
-    <div class="ctr-note">* Beta counter — counts every page visit, scan &amp; bot message. App not yet publicly launched.</div>
+    <p class="ctr-sub">Every visit, every scan, every GHOST conversation counts. Don't hesitate — it's <strong style="color:#cce0ff">trusted, free &amp; AI-powered.</strong></p>
+    <div class="ctr-note">* Beta counter — counts page visits, scans &amp; bot messages. App not yet publicly launched.</div>
     <div class="cbadge-row">
       <div class="cbadge g">✅ 100% FREE</div>
-      <div class="cbadge c">🔒 NO DATA STORED</div>
-      <div class="cbadge a">⚡ GEMINI POWERED</div>
+      <div class="cbadge c">🔒 KEY STORED LOCALLY</div>
+      <div class="cbadge a">⚡ GEMINI 1.5 FLASH</div>
     </div>
   </div>
 </div>
@@ -280,12 +329,12 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
 <div class="section">
   <div class="sec-ttl">⚡ WHY GHOSTNETRAX?</div>
   <div class="feat-grid">
-    <div class="feat"><span class="ficon">⚡</span><div class="ftitle">QUICK SCAN</div><div class="fdesc">Instant heuristic URL analysis — no AI, no key needed. Detects phishing keywords, suspicious TLDs, brand impersonation, IP abuse, and typosquatting in milliseconds.</div></div>
-    <div class="feat"><span class="ficon">🔥</span><div class="ftitle">PREMIUM AI SCAN</div><div class="fdesc">Gemini 2.0 Flash + Google Search grounding delivers full deep analysis with live web intelligence, detailed threat categorisation, and actionable reports.</div></div>
-    <div class="feat"><span class="ficon">👻</span><div class="ftitle">GHOST AI BOT</div><div class="fdesc">Your cyber prodigy AI companion. Searches the live web for the latest threats, teaches attack techniques and defenses with real-time intelligence.</div></div>
-    <div class="feat"><span class="ficon">🛡️</span><div class="ftitle">ZERO TRACKING</div><div class="fdesc">No accounts, no data collection, no subscriptions. Your API key is stored locally only. Privacy is our architecture, not a policy checkbox.</div></div>
-    <div class="feat"><span class="ficon">🌐</span><div class="ftitle">LIVE WEB INTEL</div><div class="fdesc">Google Search grounded responses — not just training data. Real-time intelligence from the live web on every premium scan and GHOST response.</div></div>
-    <div class="feat"><span class="ficon">🎓</span><div class="ftitle">CYBER EDUCATION</div><div class="fdesc">Learn SQL injection, XSS, MITM, social engineering, and defense strategies. GHOST turns every threat into a learning moment.</div></div>
+    <div class="feat"><span class="ficon">⚡</span><div class="ftitle">QUICK SCAN</div><div class="fdesc">Instant heuristic URL analysis — no API key needed. Detects phishing keywords, suspicious TLDs, brand impersonation, typosquatting &amp; more in milliseconds.</div></div>
+    <div class="feat"><span class="ficon">🔥</span><div class="ftitle">PREMIUM AI SCAN</div><div class="fdesc">Gemini 1.5 Flash deep analysis — comprehensive threat categorization, risk scoring, technical findings, and actionable defense recommendations.</div></div>
+    <div class="feat"><span class="ficon">👻</span><div class="ftitle">GHOST AI BOT</div><div class="fdesc">Your AI cyber prodigy companion. Covers SQL injection, phishing, MITM, ransomware, zero-days, defense strategies — always precise and technical.</div></div>
+    <div class="feat"><span class="ficon">🔑</span><div class="ftitle">API VALIDATION</div><div class="fdesc">Your Gemini key is validated live before saving — so you always know it works before you need it. Stored locally, never transmitted elsewhere.</div></div>
+    <div class="feat"><span class="ficon">🛡️</span><div class="ftitle">ZERO TRACKING</div><div class="fdesc">No accounts, no subscriptions, no data collection. Your key lives only in your browser's localStorage. Privacy by design.</div></div>
+    <div class="feat"><span class="ficon">🎓</span><div class="ftitle">CYBER EDUCATION</div><div class="fdesc">Learn how real attacks work and how to stop them. GHOST turns every threat into a learning opportunity for better digital hygiene.</div></div>
   </div>
 </div>
 
@@ -294,10 +343,10 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
   <div class="sec-ttl">🔒 ESSENTIAL DEFENSE</div>
   <div class="card">
     <div class="tips-grid">
-      <div class="tip"><div class="tnum">01</div><div><strong>VERIFY BEFORE CLICK</strong><span>Hover links to preview destinations. Attackers disguise malicious URLs behind legitimate-looking anchor text.</span></div></div>
-      <div class="tip"><div class="tnum">02</div><div><strong>CHECK THE DOMAIN</strong><span>HTTPS does not mean safe. Always verify the exact domain — phishing sites fake the design, not the URL.</span></div></div>
-      <div class="tip"><div class="tnum">03</div><div><strong>ENABLE 2FA</strong><span>Two-factor authentication stops 99%+ of automated takeover attacks. Use it everywhere — especially email and banking.</span></div></div>
-      <div class="tip"><div class="tnum">04</div><div><strong>SCAN FIRST</strong><span>Run every suspicious URL through GhostNetraX before clicking or sharing. One second of scanning beats hours of damage.</span></div></div>
+      <div class="tip"><div class="tnum">01</div><div><strong>VERIFY BEFORE CLICK</strong><span>Hover links to preview destinations. Attackers hide malicious URLs behind legitimate-looking anchor text every day.</span></div></div>
+      <div class="tip"><div class="tnum">02</div><div><strong>CHECK THE DOMAIN</strong><span>HTTPS does not mean safe. Verify the exact domain name — phishing sites copy the design, they can't copy the real URL.</span></div></div>
+      <div class="tip"><div class="tnum">03</div><div><strong>ENABLE 2FA</strong><span>Two-factor authentication stops 99%+ of automated account takeover attacks — even if your password leaks.</span></div></div>
+      <div class="tip"><div class="tnum">04</div><div><strong>SCAN FIRST</strong><span>Run every suspicious link through GhostNetraX before clicking or forwarding. One second of scanning beats hours of cleanup.</span></div></div>
     </div>
   </div>
 </div>
@@ -307,199 +356,153 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
   <div class="fdev">⚡ DEVELOPED BY AMLAN DEY ⚡</div>
   <div class="fcopy">© 2025 GhostNetraX · AI-Powered Cybersecurity Platform · Beta</div>
 </footer>
-</div>
+</div><!-- #app -->
 
 <script>
-/* ═══════════════════════════════
-   CANVAS — MATRIX HACKER BG
-═══════════════════════════════ */
+/* ═══════════════════════════════════════
+   CANVAS — MATRIX HACKER BACKGROUND
+═══════════════════════════════════════ */
 const cvs = document.getElementById('bg'), cx = cvs.getContext('2d');
 let W, H;
 function resize() { W = cvs.width = window.innerWidth; H = cvs.height = window.innerHeight; }
 resize(); window.addEventListener('resize', () => { resize(); initMatrix(); });
 
-// Character sets
-const CHARS = 'GHOSTNETRAX0123456789ABCDEF@#$%<>{}[];:=+|-';
-const BIN = '01';
-const HEX = '0123456789ABCDEF';
+const GHOST_CHARS = 'GHOSTNETRAX0123456789@#$%<>{}[];:=+ABCDEF';
+const BIN_CHARS = '01';
+const HEX_CHARS = '0123456789ABCDEF';
 
-// Matrix columns
 let cols = [];
 function initMatrix() {
   cols = [];
   const n = Math.floor(W / 15);
   for (let i = 0; i < n; i++) {
-    const t = Math.random();
+    const r = Math.random();
     cols.push({
       x: i * 15,
       y: Math.random() * H * 2.5 - H,
-      spd: 0.5 + Math.random() * 2.5,
-      type: t < 0.12 ? 'bin' : t < 0.22 ? 'hex' : 'ghost', // mostly GHOST chars, some binary, some hex
-      bright: Math.random() > 0.92,
-      dim: 0.12 + Math.random() * 0.75,
-      size: Math.random() > 0.85 ? 16 : 13
+      spd: 0.5 + Math.random() * 2.4,
+      type: r < 0.13 ? 'bin' : r < 0.24 ? 'hex' : 'ghost',
+      dim: 0.12 + Math.random() * 0.8,
+      sz: Math.random() > 0.88 ? 15 : 12
     });
   }
 }
 initMatrix();
 
-// Glitch state
-let glitch = { active:false, y:0, h:0, timer:0, xShift:0 };
+function rChar(c) {
+  if (c.type === 'bin') return BIN_CHARS[Math.floor(Math.random()*2)];
+  if (c.type === 'hex') return HEX_CHARS[Math.floor(Math.random()*16)];
+  return GHOST_CHARS[Math.floor(Math.random()*GHOST_CHARS.length)];
+}
 
-// Room state
+// Glitch
+let glitch = { on:false, y:0, h:0, t:0, xs:0 };
 let fNum = 0;
 const projects = ['> SQL INJECTION v1','> PORT SCANNER','> GHOST RECON','> WEB CRAWLER','> PACKET SNIFFER','> GHOST NET v1','> KEYLOGGER DEMO','> FIREWALL BYPASS','> NETRAX ENGINE','> GHOSTNETRAX 🔥'];
-
-function randChar(col) {
-  if (col.type === 'bin') return BIN[Math.floor(Math.random()*2)];
-  if (col.type === 'hex') return HEX[Math.floor(Math.random()*16)];
-  return CHARS[Math.floor(Math.random()*CHARS.length)];
-}
+const clines = ['> ghostnetrax --scan','> PHISHING: DETECTED 🔴','> def exploit(host):','  return shell_exec()','> patch applied ✅'];
 
 function draw() {
   fNum++;
 
-  // Fade overlay — creates the classic matrix trail
+  // Matrix fade overlay
   cx.fillStyle = 'rgba(2,2,12,0.10)';
   cx.fillRect(0, 0, W, H);
 
-  // ── MATRIX RAIN ──
-  cols.forEach((c) => {
-    const ch = randChar(c);
-    cx.font = `${c.size}px Share Tech Mono,monospace`;
-
-    // Leading char = bright white
-    cx.globalAlpha = 0.95;
-    cx.fillStyle = '#ffffff';
-    cx.fillText(ch, c.x, c.y);
-
-    // Trail chars
+  // Matrix rain
+  cols.forEach(c => {
+    cx.font = `${c.sz}px Share Tech Mono,monospace`;
+    // Leading white char
+    cx.globalAlpha = 0.95; cx.fillStyle = '#ffffff';
+    cx.fillText(rChar(c), c.x, c.y);
+    // Trail
     for (let t = 1; t <= 4; t++) {
-      const ty = c.y - t * c.size;
-      if (ty < 0) continue;
-      const fade = c.dim * (0.75 - t * 0.16);
-      cx.globalAlpha = Math.max(fade, 0.02);
-      // Color by type
-      if (c.type === 'bin') cx.fillStyle = '#00ffff';
-      else if (c.type === 'hex') cx.fillStyle = '#a78bfa';
-      else cx.fillStyle = '#00ff41';
-      cx.fillText(randChar(c), c.x, ty);
+      const ty = c.y - t * c.sz; if (ty < 0) continue;
+      cx.globalAlpha = Math.max(c.dim * (0.72 - t * 0.16), 0.02);
+      cx.fillStyle = c.type==='bin' ? '#00ffff' : c.type==='hex' ? '#a78bfa' : '#00ff41';
+      cx.fillText(rChar(c), c.x, ty);
     }
-
-    cx.globalAlpha = 1;
     c.y += c.spd;
-    if (c.y - 5 * c.size > H) {
-      c.y = -c.size * 2;
-      c.bright = Math.random() > 0.9;
-      c.dim = 0.12 + Math.random() * 0.75;
-      c.spd = 0.5 + Math.random() * 2.5;
-    }
+    if (c.y - 6*c.sz > H) { c.y = -c.sz*2; c.dim = 0.12+Math.random()*0.8; c.spd = 0.5+Math.random()*2.4; }
   });
+  cx.globalAlpha = 1;
 
-  // ── GLITCH EFFECTS ──
-  glitch.timer++;
-  if (glitch.timer > 80 + Math.random() * 180) {
-    glitch.active = true;
-    glitch.y = Math.random() * H;
-    glitch.h = 1 + Math.random() * 3;
-    glitch.xShift = (Math.random() - 0.5) * 12;
-    glitch.timer = 0;
+  // Glitch effects
+  glitch.t++;
+  if (glitch.t > 80 + Math.random() * 200) {
+    glitch.on = true; glitch.y = Math.random()*H; glitch.h = 1+Math.random()*3;
+    glitch.xs = (Math.random()-0.5)*14; glitch.t = 0;
   }
-  if (glitch.active) {
-    // Scan line
-    cx.globalAlpha = 0.04 + Math.random() * 0.05;
-    cx.fillStyle = '#00ff41';
+  if (glitch.on) {
+    cx.globalAlpha = 0.04+Math.random()*0.05; cx.fillStyle = '#00ff41';
     cx.fillRect(0, glitch.y, W, glitch.h);
-    // Chromatic aberration slice
-    cx.globalAlpha = 0.025;
-    cx.fillStyle = '#ff4455';
-    cx.fillRect(glitch.xShift, glitch.y, W * 0.7, glitch.h * 0.5);
-    cx.globalAlpha = 0.02;
-    cx.fillStyle = '#00ffff';
-    cx.fillRect(-glitch.xShift, glitch.y + glitch.h * 0.3, W * 0.6, glitch.h * 0.4);
-    if (Math.random() > 0.55) glitch.active = false;
+    cx.globalAlpha = 0.025; cx.fillStyle = '#ff4455';
+    cx.fillRect(glitch.xs, glitch.y, W*0.7, glitch.h*0.5);
+    cx.globalAlpha = 0.02; cx.fillStyle = '#00ffff';
+    cx.fillRect(-glitch.xs, glitch.y+glitch.h*0.3, W*0.6, glitch.h*0.4);
+    if (Math.random() > 0.55) glitch.on = false;
   }
+  if (fNum % 220 === 0) { cx.globalAlpha=0.012; cx.fillStyle='#00ff41'; cx.fillRect(0,Math.random()*H,W,0.5); }
+  cx.globalAlpha = 1;
 
-  // Occasional wide horizontal flicker
-  if (fNum % 200 === 0) {
-    cx.globalAlpha = 0.015;
-    cx.fillStyle = '#00ff41';
-    const fy = Math.random() * H;
-    cx.fillRect(0, fy, W, 0.5);
-  }
+  // Room scene (bottom 38%)
+  const rh = H*0.38, ry = H-rh;
+  const flG = cx.createLinearGradient(0,ry,0,H);
+  flG.addColorStop(0,'rgba(2,2,12,0)'); flG.addColorStop(0.4,'rgba(2,2,12,0.80)'); flG.addColorStop(1,'rgba(2,2,12,0.97)');
+  cx.fillStyle = flG; cx.fillRect(0,ry,W,rh);
 
-  // ── ROOM SCENE ──
-  const rh = H * 0.38, ry = H - rh;
+  // Wall grid
+  cx.globalAlpha=0.045; cx.strokeStyle='#8b5cf6'; cx.lineWidth=0.5;
+  const gX=W*0.04,gY=ry+8,gW=W*0.3,gH=rh*0.72;
+  for(let xi=0;xi<gW;xi+=26){cx.beginPath();cx.moveTo(gX+xi,gY);cx.lineTo(gX+xi,gY+gH);cx.stroke();}
+  for(let yi=0;yi<gH;yi+=22){cx.beginPath();cx.moveTo(gX,gY+yi);cx.lineTo(gX+gW,gY+yi);cx.stroke();}
 
-  // Floor fade overlay
-  const flG = cx.createLinearGradient(0, ry, 0, H);
-  flG.addColorStop(0,'rgba(2,2,12,0)');
-  flG.addColorStop(0.4,'rgba(2,2,12,0.78)');
-  flG.addColorStop(1,'rgba(2,2,12,0.97)');
-  cx.globalAlpha = 1; cx.fillStyle = flG; cx.fillRect(0, ry, W, rh);
-
-  // Wall grid (ambient left)
-  cx.globalAlpha = 0.045; cx.strokeStyle = '#8b5cf6'; cx.lineWidth = 0.5;
-  const gX = W*0.04, gY = ry+8, gW = W*0.3, gH = rh*0.72;
-  for (let xi = 0; xi < gW; xi += 26) { cx.beginPath(); cx.moveTo(gX+xi,gY); cx.lineTo(gX+xi,gY+gH); cx.stroke(); }
-  for (let yi = 0; yi < gH; yi += 22) { cx.beginPath(); cx.moveTo(gX,gY+yi); cx.lineTo(gX+gW,gY+yi); cx.stroke(); }
-
-  // ROADMAP MONITOR (right wall)
-  const mx = W*0.65, my = ry+14, mw = Math.min(W*0.3, 275), mh = rh*0.68;
-  cx.globalAlpha = 0.55; cx.strokeStyle = 'rgba(139,92,246,.55)'; cx.lineWidth = 1; cx.strokeRect(mx,my,mw,mh);
-  cx.globalAlpha = 0.06; cx.fillStyle = '#0d0820'; cx.fillRect(mx,my,mw,mh);
-  // Top bar
-  cx.globalAlpha = 0.18; cx.fillStyle = '#8b5cf6'; cx.fillRect(mx,my,mw,14);
-  cx.globalAlpha = 0.22; cx.fillStyle = '#e0d0ff'; cx.font = '7px Share Tech Mono,monospace';
-  cx.fillText('GHOST / PROJECT ROADMAP', mx+6, my+10);
-  // Items
-  projects.forEach((p, i) => {
-    const py = my + 26 + i * ((mh-32)/projects.length);
-    const alpha = 0.3 + 0.6 * ((Math.sin(fNum*0.022 + i*0.6)+1)/2);
-    const last = i === projects.length-1;
-    cx.globalAlpha = alpha * (last?1:.75);
-    cx.fillStyle = last ? '#00ffff' : '#8b5cf6';
-    cx.beginPath(); cx.arc(mx+9, py, last?3.5:2.2, 0, Math.PI*2); cx.fill();
-    if (i > 0) {
-      cx.globalAlpha = 0.07; cx.strokeStyle='#8b5cf6'; cx.lineWidth=1;
-      cx.beginPath(); cx.moveTo(mx+9, py-(mh-32)/projects.length); cx.lineTo(mx+9,py); cx.stroke();
-    }
-    cx.globalAlpha = alpha * 0.9;
-    cx.fillStyle = last ? '#00ffff' : '#aabbcc';
-    cx.font = (last?'bold ':'') + '8.5px Share Tech Mono,monospace';
-    cx.fillText(p, mx+18, py+3.5);
+  // Roadmap monitor
+  const mx=W*0.65,my=ry+14,mw=Math.min(W*0.3,272),mh=rh*0.68;
+  cx.globalAlpha=0.52; cx.strokeStyle='rgba(139,92,246,.55)'; cx.lineWidth=1; cx.strokeRect(mx,my,mw,mh);
+  cx.globalAlpha=0.06; cx.fillStyle='#0d0820'; cx.fillRect(mx,my,mw,mh);
+  cx.globalAlpha=0.18; cx.fillStyle='#8b5cf6'; cx.fillRect(mx,my,mw,13);
+  cx.globalAlpha=0.22; cx.fillStyle='#e0d0ff'; cx.font='7px Share Tech Mono,monospace';
+  cx.fillText('GHOST / PROJECT ROADMAP',mx+6,my+9.5);
+  projects.forEach((p,i)=>{
+    const py=my+25+i*((mh-30)/projects.length);
+    const al=0.3+0.6*((Math.sin(fNum*0.022+i*0.6)+1)/2);
+    const last=i===projects.length-1;
+    cx.globalAlpha=al*(last?1:.75); cx.fillStyle=last?'#00ffff':'#8b5cf6';
+    cx.beginPath(); cx.arc(mx+9,py,last?3.5:2.2,0,Math.PI*2); cx.fill();
+    if(i>0){cx.globalAlpha=0.07;cx.strokeStyle='#8b5cf6';cx.lineWidth=1;cx.beginPath();cx.moveTo(mx+9,py-(mh-30)/projects.length);cx.lineTo(mx+9,py);cx.stroke();}
+    cx.globalAlpha=al*0.9; cx.fillStyle=last?'#00ffff':'#aabbcc';
+    cx.font=(last?'bold ':'')+`8.5px Share Tech Mono,monospace`;
+    cx.fillText(p,mx+18,py+3.5);
   });
 
-  // DESK
-  const dX=W*0.22, dY=H-rh*0.28, dW=W*0.48, dH=11;
+  // Desk
+  const dX=W*0.22,dY=H-rh*0.28,dW=W*0.48,dH=11;
   const dkG=cx.createLinearGradient(dX,dY,dX,dY+dH);
   dkG.addColorStop(0,'#1a1035'); dkG.addColorStop(1,'#0a0620');
   cx.globalAlpha=0.82; cx.fillStyle=dkG; cx.fillRect(dX,dY,dW,dH);
   cx.strokeStyle='rgba(139,92,246,.5)'; cx.lineWidth=0.8; cx.strokeRect(dX,dY,dW,dH);
 
-  // LAPTOP
-  const lx=W*0.37, ly=H-rh*0.28-88, lw=132, lh=82;
+  // Laptop
+  const lx=W*0.37,ly=H-rh*0.28-88,lw=132,lh=82;
   const gP=(Math.sin(fNum*0.032)+1)*0.5;
   const sgG=cx.createRadialGradient(lx+lw/2,ly+lh/2,4,lx+lw/2,ly+lh/2,lw*0.8);
   sgG.addColorStop(0,`rgba(0,255,255,${0.06+gP*0.06})`); sgG.addColorStop(1,'rgba(0,255,255,0)');
   cx.globalAlpha=1; cx.fillStyle=sgG; cx.fillRect(lx-35,ly-25,lw+70,lh+55);
-  cx.globalAlpha=0.72; cx.fillStyle='#010a1a'; cx.fillRect(lx,ly,lw,lh);
-  cx.strokeStyle=`rgba(0,255,255,${0.45+gP*0.5})`; cx.lineWidth=1.5; cx.strokeRect(lx,ly,lw,lh);
-  const clines=['> ghostnetrax --scan','> PHISHING DETECTED 🔴','> def exploit(host):','  return shell_exec()','> patch applied ✅'];
+  cx.globalAlpha=0.73; cx.fillStyle='#010a1a'; cx.fillRect(lx,ly,lw,lh);
+  cx.strokeStyle=`rgba(0,255,255,${0.44+gP*0.5})`; cx.lineWidth=1.5; cx.strokeRect(lx,ly,lw,lh);
   const si=Math.floor(fNum*0.018)%clines.length;
   for(let li=0;li<5;li++){
-    cx.globalAlpha=li===4?0.88:0.18+li*0.13;
+    cx.globalAlpha=li===4?0.88:0.17+li*0.13;
     cx.fillStyle=li%2===0?'#00ffff':'#a78bfa';
     cx.font='7px Share Tech Mono,monospace';
     cx.fillText(clines[(si+li)%clines.length],lx+7,ly+14+li*13.5);
   }
   if(Math.floor(fNum*0.05)%2===0){cx.globalAlpha=0.8;cx.fillStyle='#00ffff';cx.fillRect(lx+7,ly+76,7,1.5);}
-  cx.globalAlpha=0.75; cx.fillStyle='#0c0820'; cx.fillRect(lx-10,ly+lh,lw+20,9);
+  cx.globalAlpha=0.76; cx.fillStyle='#0c0820'; cx.fillRect(lx-10,ly+lh,lw+20,9);
   cx.strokeStyle='rgba(139,92,246,.4)'; cx.lineWidth=0.8; cx.strokeRect(lx-10,ly+lh,lw+20,9);
 
-  // BOY — GHOST
-  const bx=W*0.41, bby=H-rh*0.28-2;
-  const sw=Math.sin(fNum*0.11)*9;
+  // GHOST silhouette
+  const bx=W*0.41,bby=H-rh*0.28-2,sw=Math.sin(fNum*0.11)*9;
   cx.globalAlpha=0.07;
   const halo=cx.createRadialGradient(bx,bby-65,3,bx,bby-65,60);
   halo.addColorStop(0,'rgba(139,92,246,.9)'); halo.addColorStop(1,'rgba(139,92,246,0)');
@@ -507,204 +510,306 @@ function draw() {
   const bG=cx.createLinearGradient(bx,bby-95,bx,bby-15);
   bG.addColorStop(0,'rgba(110,75,155,.9)'); bG.addColorStop(1,'rgba(45,25,75,.4)');
   cx.globalAlpha=0.65; cx.fillStyle=bG;
-  cx.beginPath(); cx.moveTo(bx-23,bby-74); cx.lineTo(bx+23,bby-74); cx.lineTo(bx+18,bby-18); cx.lineTo(bx-18,bby-18); cx.closePath(); cx.fill();
-  cx.globalAlpha=0.85; cx.fillStyle='rgba(130,95,175,.92)';
-  cx.beginPath(); cx.arc(bx,bby-90,17,0,Math.PI*2); cx.fill();
+  cx.beginPath();cx.moveTo(bx-23,bby-74);cx.lineTo(bx+23,bby-74);cx.lineTo(bx+18,bby-18);cx.lineTo(bx-18,bby-18);cx.closePath();cx.fill();
+  cx.globalAlpha=0.86; cx.fillStyle='rgba(130,95,175,.92)';
+  cx.beginPath();cx.arc(bx,bby-90,17,0,Math.PI*2);cx.fill();
   cx.globalAlpha=0.2; cx.strokeStyle='#a78bfa'; cx.lineWidth=1.5;
-  cx.beginPath(); cx.arc(bx,bby-90,21,Math.PI*0.75,Math.PI*2.25); cx.stroke();
+  cx.beginPath();cx.arc(bx,bby-90,21,Math.PI*0.75,Math.PI*2.25);cx.stroke();
   cx.globalAlpha=0.65; cx.strokeStyle='rgba(110,75,155,.9)'; cx.lineWidth=7; cx.lineCap='round';
-  cx.beginPath(); cx.moveTo(bx-21,bby-62); cx.lineTo(bx-43,bby-28+sw); cx.stroke();
-  cx.beginPath(); cx.moveTo(bx+21,bby-62); cx.lineTo(bx+43,bby-28-sw); cx.stroke();
+  cx.beginPath();cx.moveTo(bx-21,bby-62);cx.lineTo(bx-43,bby-28+sw);cx.stroke();
+  cx.beginPath();cx.moveTo(bx+21,bby-62);cx.lineTo(bx+43,bby-28-sw);cx.stroke();
   cx.globalAlpha=0.55; cx.fillStyle='#8b6fa0';
-  cx.beginPath(); cx.arc(bx-43,bby-28+sw,5,0,Math.PI*2); cx.fill();
-  cx.beginPath(); cx.arc(bx+43,bby-28-sw,5,0,Math.PI*2); cx.fill();
-  cx.globalAlpha=0.75; cx.fillStyle='#00ffff';
-  cx.beginPath(); cx.arc(bx-6,bby-92,1.5,0,Math.PI*2); cx.fill();
-  cx.beginPath(); cx.arc(bx+6,bby-92,1.5,0,Math.PI*2); cx.fill();
+  cx.beginPath();cx.arc(bx-43,bby-28+sw,5,0,Math.PI*2);cx.fill();
+  cx.beginPath();cx.arc(bx+43,bby-28-sw,5,0,Math.PI*2);cx.fill();
+  cx.globalAlpha=0.76; cx.fillStyle='#00ffff';
+  cx.beginPath();cx.arc(bx-6,bby-92,1.5,0,Math.PI*2);cx.fill();
+  cx.beginPath();cx.arc(bx+6,bby-92,1.5,0,Math.PI*2);cx.fill();
   cx.globalAlpha=0.28; cx.fillStyle='#00ffff'; cx.font='7.5px Orbitron,sans-serif';
-  cx.fillText('GHOST', bx-15, bby-114);
-
+  cx.fillText('GHOST',bx-15,bby-114);
   cx.globalAlpha=1;
+
   requestAnimationFrame(draw);
 }
 draw();
 
-/* ═══════════════════════════════
-   REALISTIC COUNTER
-═══════════════════════════════ */
+/* ═══════════════════════════════════════
+   COUNTER — REALISTIC BETA
+═══════════════════════════════════════ */
 function getCount() {
-  const v = localStorage.getItem('gnx_b2');
-  if (!v) { localStorage.setItem('gnx_b2','47'); return 47; } // beta start — realistic
+  const v = localStorage.getItem('gnx_b3');
+  if (!v) { localStorage.setItem('gnx_b3','47'); return 47; }
   return parseInt(v);
 }
 function bump(n=1) {
-  const c = getCount() + n;
-  localStorage.setItem('gnx_b2', String(c));
+  const c = getCount()+n;
+  localStorage.setItem('gnx_b3', String(c));
   animNum(c); return c;
 }
 function animNum(target) {
-  const el = document.getElementById('cNum');
-  const s = parseInt(el.textContent.replace(/,/g,''))||0;
+  const el=document.getElementById('cNum');
+  const s=parseInt(el.textContent.replace(/,/g,''))||0;
   const d=1800, t0=performance.now();
   function tick(now) {
-    const p=Math.min((now-t0)/d,1);
-    const e=1-Math.pow(1-p,3);
+    const p=Math.min((now-t0)/d,1), e=1-Math.pow(1-p,3);
     el.textContent=Math.floor(s+(target-s)*e).toLocaleString();
-    if(p<1) requestAnimationFrame(tick);
-    else el.textContent=target.toLocaleString();
+    if(p<1) requestAnimationFrame(tick); else el.textContent=target.toLocaleString();
   }
   requestAnimationFrame(tick);
 }
-setTimeout(() => animNum(bump(1)), 600);
+setTimeout(()=>animNum(bump(1)), 600);
 
-/* ═══════════════════════════════
+/* ═══════════════════════════════════════
    MODE SWITCHING
-═══════════════════════════════ */
+═══════════════════════════════════════ */
 let mode = 'quick';
 function setMode(m) {
   mode = m;
-  document.getElementById('btnQ').className = 'mode-btn' + (m==='quick'?' aq':'');
-  document.getElementById('btnP').className = 'mode-btn' + (m==='premium'?' ap':'');
-  document.getElementById('quickSec').style.display = m==='quick'?'':'none';
-  document.getElementById('premSec').style.display = m==='premium'?'':'none';
-  document.getElementById('botSec').style.display = m==='premium'?'':'none';
+  document.getElementById('btnQ').className='mode-btn'+(m==='quick'?' aq':'');
+  document.getElementById('btnP').className='mode-btn'+(m==='premium'?' ap':'');
+  document.getElementById('quickSec').style.display=m==='quick'?'':'none';
+  document.getElementById('premSec').style.display=m==='premium'?'':'none';
+  document.getElementById('botSec').style.display=(m==='premium'&&keyIsValid)?'':'none';
   if (m==='premium') {
-    document.getElementById('apiBar').style.display = 'block';
-    const saved = localStorage.getItem('gnx_key');
-    if (saved) document.getElementById('apiKey').value = saved;
-    setTimeout(() => document.getElementById('premSec').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+    refreshPremiumUI();
+    setTimeout(()=>document.getElementById('premSec').scrollIntoView({behavior:'smooth',block:'start'}),100);
   }
 }
 
-/* API KEY */
-function saveKey() { const k=document.getElementById('apiKey').value; if(k) localStorage.setItem('gnx_key',k); }
-let kv=false;
-function toggleKey() { kv=!kv; document.getElementById('apiKey').type=kv?'text':'password'; document.querySelector('#apiBar .btn-v').textContent=kv?'HIDE':'SHOW'; }
-function getKey() { return document.getElementById('apiKey').value.trim()||localStorage.getItem('gnx_key')||''; }
+/* ═══════════════════════════════════════
+   API KEY — VALIDATE & SAVE
+   Model: gemini-1.5-flash (free tier, fast, reliable for cybersecurity tasks)
+═══════════════════════════════════════ */
+const MODEL = 'gemini-2.5-flash';
+const GURL = key => `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${key}`;
 
-/* ═══════════════════════════════
+let keyIsValid = false;
+let savedKey = '';
+
+// On load, restore saved key
+(function initKey() {
+  const k = localStorage.getItem('gnx_ak');
+  if (k) {
+    document.getElementById('apiKeyInp').value = k;
+    savedKey = k;
+    // Mark as valid without re-validating (assume it was valid when saved)
+    keyIsValid = true;
+    refreshPremiumUI();
+  }
+})();
+
+function refreshPremiumUI() {
+  if (keyIsValid && savedKey) {
+    document.getElementById('apiSetupPanel').style.display = 'none';
+    document.getElementById('keySavedBar').style.display = 'flex';
+    document.getElementById('premLocked').style.display = 'none';
+    document.getElementById('premUnlocked').style.display = 'block';
+    document.getElementById('botSec').style.display = mode==='premium' ? '' : 'none';
+  } else {
+    document.getElementById('apiSetupPanel').style.display = 'block';
+    document.getElementById('keySavedBar').style.display = 'none';
+    document.getElementById('premLocked').style.display = 'block';
+    document.getElementById('premUnlocked').style.display = 'none';
+    document.getElementById('botSec').style.display = 'none';
+  }
+}
+
+let kv = false;
+function toggleKeyVis() {
+  kv = !kv;
+  document.getElementById('apiKeyInp').type = kv ? 'text' : 'password';
+  document.getElementById('showKeyBtn').textContent = kv ? 'HIDE' : 'SHOW';
+}
+
+function changeKey() {
+  keyIsValid = false; savedKey = '';
+  localStorage.removeItem('gnx_ak');
+  document.getElementById('apiKeyInp').value = '';
+  document.getElementById('apiKeyInp').className = 'api-inp';
+  document.getElementById('apiStatus').innerHTML = '';
+  refreshPremiumUI();
+}
+
+async function validateAndSaveKey() {
+  const key = document.getElementById('apiKeyInp').value.trim();
+  if (!key) {
+    setApiStatus('err', '⚠ Please paste your Gemini API key first.');
+    return;
+  }
+  if (!key.startsWith('AIza')) {
+    setApiStatus('err', '⚠ Invalid format — Gemini keys start with "AIza..."');
+    document.getElementById('apiKeyInp').className = 'api-inp invalid';
+    return;
+  }
+
+  const saveBtn = document.getElementById('saveKeyBtn');
+  saveBtn.disabled = true;
+  saveBtn.textContent = 'VALIDATING...';
+  setApiStatus('checking', '⏳ Sending test request to Gemini API...');
+  document.getElementById('apiKeyInp').className = 'api-inp';
+
+  try {
+    // Send a minimal validation request
+    const res = await fetch(GURL(key), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ role:'user', parts:[{ text:'Reply only with the word: VALID' }] }],
+        generationConfig: { maxOutputTokens: 10, temperature: 0 }
+      })
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      // Parse the error cleanly
+      const errMsg = data?.error?.message || `HTTP ${res.status}`;
+      // Check quota/billing
+      if (errMsg.toLowerCase().includes('quota') || errMsg.toLowerCase().includes('billing')) {
+        setApiStatus('err', '⚠ Quota exceeded or billing issue on this key. Try a different key.');
+      } else if (errMsg.toLowerCase().includes('api_key') || errMsg.toLowerCase().includes('invalid')) {
+        setApiStatus('err', '⚠ Invalid API key — please check and try again.');
+      } else {
+        setApiStatus('err', `⚠ API error: ${errMsg}`);
+      }
+      document.getElementById('apiKeyInp').className = 'api-inp invalid';
+      saveBtn.disabled = false; saveBtn.textContent = 'VALIDATE & SAVE';
+      return;
+    }
+
+    // Key is valid
+    savedKey = key;
+    keyIsValid = true;
+    localStorage.setItem('gnx_ak', key);
+    document.getElementById('apiKeyInp').className = 'api-inp valid';
+    setApiStatus('ok', '✅ API key validated successfully! Premium features unlocked.');
+    setTimeout(() => refreshPremiumUI(), 900);
+
+  } catch(e) {
+    setApiStatus('err', `⚠ Network error: ${e.message}. Check your connection.`);
+    document.getElementById('apiKeyInp').className = 'api-inp invalid';
+  }
+
+  saveBtn.disabled = false; saveBtn.textContent = 'VALIDATE & SAVE';
+}
+
+function setApiStatus(type, msg) {
+  const el = document.getElementById('apiStatus');
+  el.className = `api-status ${type}`;
+  el.textContent = msg;
+}
+
+/* ═══════════════════════════════════════
+   GEMINI CALL HELPER
+   Model: gemini-2.5-flash
+   - Free tier: 1500 req/day, 1M tokens/min
+   - Best for: fast analysis, classification, Q&A
+   - No google_search tool needed (avoids billing issues)
+═══════════════════════════════════════ */
+async function callGemini(contents) {
+  const res = await fetch(GURL(savedKey), {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      contents,
+      generationConfig: { maxOutputTokens: 1024, temperature: 0.4 }
+    })
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    const em = data?.error?.message || `HTTP ${res.status}`;
+    throw new Error(em);
+  }
+  return (data.candidates?.[0]?.content?.parts||[]).filter(p=>p.text).map(p=>p.text).join('');
+}
+
+/* ═══════════════════════════════════════
    QUICK SCAN — HEURISTIC (No AI)
-═══════════════════════════════ */
-const PHISH = ['login','signin','verify','account','secure','update','confirm','banking','paypal','password','credential','suspended','unusual-activity','locked','validate','recover','alert-','urgent-','ebay-','apple-','microsoft-','amazon-'];
+═══════════════════════════════════════ */
+const PHISH = ['login','signin','verify','account','secure','update','confirm','banking','paypal','password','credential','suspended','unusual-activity','locked','validate','recover','alert-','urgent-','ebay-','apple-support','microsoft-','amazon-security'];
 const STLD = ['xyz','tk','ml','ga','cf','gq','pw','top','click','download','zip','review','gdn','cam','surf','loan','work','date','icu','rest','casa'];
 const SHORTS = ['bit.ly','tinyurl','t.co','goo.gl','ow.ly','rb.gy','cutt.ly','tiny.cc','is.gd','buff.ly'];
 const BRANDS = ['google','facebook','apple','microsoft','amazon','paypal','netflix','instagram','twitter','whatsapp','chase','wellsfargo','bankofamerica','youtube'];
-const SAFE = ['google.com','facebook.com','apple.com','microsoft.com','amazon.com','paypal.com','netflix.com','instagram.com','twitter.com','github.com','wikipedia.org','youtube.com','linkedin.com'];
+const SAFE = ['google.com','facebook.com','apple.com','microsoft.com','amazon.com','paypal.com','netflix.com','instagram.com','twitter.com','github.com','wikipedia.org','youtube.com','linkedin.com','reddit.com'];
 
 function heuristic(url) {
-  const hits = [];
-  let risk = 0;
-  const lower = url.toLowerCase();
-  let hostname = '', tld = '', parts = [];
+  const hits=[]; let risk=0; const lower=url.toLowerCase();
+  let hostname='',tld='',parts=[];
   try {
-    const u = new URL(/^https?:\/\//i.test(url)?url:'https://'+url);
-    hostname = u.hostname.toLowerCase();
-    parts = hostname.split('.');
-    tld = parts[parts.length-1];
-  } catch(e) {
-    return { hits:[{sev:'high',t:'Malformed URL — cannot parse structure'}], risk:65 };
-  }
-  // Known safe short-circuit
-  if (SAFE.some(d => hostname===d || hostname.endsWith('.'+d))) return { hits:[{sev:'info',t:'Recognised trusted domain — no flags detected'}], risk:0 };
-  // IP in URL
-  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(hostname)) { hits.push({sev:'critical',t:'IP address used as domain — strong phishing signal'}); risk+=45; }
-  // Suspicious TLD
-  if (STLD.includes(tld)) { hits.push({sev:'high',t:`Suspicious TLD ".${tld}" — heavily abused in malicious campaigns`}); risk+=30; }
-  // Excessive subdomains
-  if (parts.length > 4) { hits.push({sev:'high',t:'Excessive subdomain depth — subdomain spoofing pattern'}); risk+=25; }
-  // Hyphens
+    const u=new URL(/^https?:\/\//i.test(url)?url:'https://'+url);
+    hostname=u.hostname.toLowerCase(); parts=hostname.split('.'); tld=parts[parts.length-1];
+  } catch(e) { return {hits:[{t:'Malformed URL — cannot parse structure'}],risk:65}; }
+  if (SAFE.some(d=>hostname===d||hostname.endsWith('.'+d))) return {hits:[{t:'Recognised trusted domain — no flags detected'}],risk:0};
+  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(hostname)){hits.push({t:'IP address used as domain — strong phishing signal'});risk+=45;}
+  if (STLD.includes(tld)){hits.push({t:`Suspicious TLD ".${tld}" — commonly abused in malicious campaigns`});risk+=30;}
+  if (parts.length>4){hits.push({t:'Excessive subdomain depth — subdomain spoofing pattern'});risk+=25;}
   const hc=(hostname.match(/-/g)||[]).length;
-  if (hc>2) { hits.push({sev:'medium',t:`${hc} hyphens in domain — common typosquatting pattern`}); risk+=18; }
-  // Long domain
-  if (hostname.length>40) { hits.push({sev:'medium',t:`Long domain name (${hostname.length} chars) — obfuscation attempt`}); risk+=12; }
-  // No HTTPS
-  if (!url.toLowerCase().startsWith('https://')) { hits.push({sev:'low',t:'No HTTPS encryption — plaintext data transmission'}); risk+=8; }
-  // Shortener
-  if (SHORTS.some(s=>hostname.includes(s))) { hits.push({sev:'medium',t:'URL shortener — final destination hidden from user'}); risk+=20; }
-  // Phishing keywords
+  if (hc>2){hits.push({t:`${hc} hyphens in domain — common typosquatting pattern`});risk+=18;}
+  if (hostname.length>40){hits.push({t:`Long domain name (${hostname.length} chars) — obfuscation attempt`});risk+=12;}
+  if (!url.toLowerCase().startsWith('https://')){hits.push({t:'No HTTPS encryption — plaintext data transmission'});risk+=8;}
+  if (SHORTS.some(s=>hostname.includes(s))){hits.push({t:'URL shortener — final destination hidden from user'});risk+=20;}
   const kw=PHISH.filter(k=>lower.includes(k));
-  if (kw.length) { hits.push({sev:'high',t:`Phishing keyword(s): ${kw.slice(0,3).join(', ')}`}); risk+=Math.min(kw.length*12,35); }
-  // Brand impersonation
-  BRANDS.forEach(b => {
-    if (hostname.includes(b)&&!hostname.endsWith(b+'.com')&&!hostname.endsWith(b+'.net')&&!hostname.endsWith(b+'.org')) {
-      hits.push({sev:'critical',t:`Brand impersonation: "${b}" in non-official domain`}); risk+=50;
+  if (kw.length){hits.push({t:`Phishing keyword(s): ${kw.slice(0,3).join(', ')}`});risk+=Math.min(kw.length*12,35);}
+  BRANDS.forEach(b=>{
+    if(hostname.includes(b)&&!hostname.endsWith(b+'.com')&&!hostname.endsWith(b+'.net')&&!hostname.endsWith(b+'.org')){
+      hits.push({t:`Brand impersonation: "${b}" in non-official domain`});risk+=50;
     }
   });
-  // Double extension
-  if (/\.(html|php|aspx)\.\w{2,6}$/.test(lower)) { hits.push({sev:'high',t:'Double extension trick — URL structure masquerade'}); risk+=30; }
-  // @ in URL
-  if (url.includes('@')) { hits.push({sev:'critical',t:'@ symbol in URL — browser ignores everything before @ (classic redirect trick)'}); risk+=40; }
-  return { hits, risk:Math.min(risk,100) };
+  if (/\.(html|php|aspx)\.\w{2,6}$/.test(lower)){hits.push({t:'Double extension trick — URL structure masquerade'});risk+=28;}
+  if (url.includes('@')){hits.push({t:'@ symbol in URL — browser ignores everything before @ (redirect trick)'});risk+=40;}
+  return {hits,risk:Math.min(risk,100)};
 }
 
 async function quickScan() {
-  let url = document.getElementById('qUrl').value.trim();
-  if (!url) return;
-  if (!/^https?:\/\//i.test(url)) url = 'https://'+url;
-  const btn=document.getElementById('qBtn'), sc=document.getElementById('qScan'), res=document.getElementById('qRes');
-  btn.disabled=true; sc.style.display='flex'; res.style.display='none';
-  bump(1);
-  await new Promise(r=>setTimeout(r,550));
+  let url=document.getElementById('qUrl').value.trim(); if(!url) return;
+  if(!/^https?:\/\//i.test(url)) url='https://'+url;
+  const btn=document.getElementById('qBtn'),sc=document.getElementById('qScan'),res=document.getElementById('qRes');
+  btn.disabled=true; sc.style.display='flex'; res.style.display='none'; bump(1);
+  await new Promise(r=>setTimeout(r,520));
   const {hits,risk}=heuristic(url);
-  let cls, icon, lbl;
-  if (risk===0||hits[0]?.sev==='info') { cls='safe'; icon='✅'; lbl='SAFE'; }
-  else if (risk<25) { cls='warn'; icon='⚠️'; lbl='LOW RISK'; }
-  else if (risk<55) { cls='warn'; icon='⚠️'; lbl='SUSPICIOUS'; }
-  else { cls='danger'; icon='🚨'; lbl='HIGH THREAT'; }
+  let cls,icon,lbl;
+  if(risk===0||hits[0]?.t?.includes('trusted')){cls='safe';icon='✅';lbl='SAFE';}
+  else if(risk<25){cls='warn';icon='⚠️';lbl='LOW RISK';}
+  else if(risk<55){cls='warn';icon='⚠️';lbl='SUSPICIOUS';}
+  else{cls='danger';icon='🚨';lbl='HIGH THREAT';}
   res.className=`result ${cls}`; res.style.display='block';
   res.innerHTML=`
     <div class="rpill">${icon} ${lbl} — Risk Score: ${risk}/100</div>
-    <p class="rexp">${hits.length===0?'No heuristic flags. URL appears structurally clean based on pattern analysis.':`Detected ${hits.length} indicator(s). Review before proceeding.`}</p>
+    <p class="rexp">${hits.length===0?'No heuristic flags triggered. URL appears structurally clean.':`Detected ${hits.length} indicator(s). Review findings before proceeding.`}</p>
     ${hits.length?`<div style="font-size:.66rem;color:var(--dim);letter-spacing:1.5px;margin:10px 0 6px">HEURISTIC FINDINGS</div>${hits.map(h=>`<div class="finding">⚑ ${h.t}</div>`).join('')}`:''}
-    <div class="upsell">💡 Quick Scan uses heuristics only — no AI. For live Google Search intelligence, full threat classification &amp; GHOST bot → <span onclick="setMode('premium')">Switch to Premium Mode</span></div>
+    <div class="upsell">💡 Quick Scan uses heuristics only — no AI. For Gemini AI deep analysis with full threat classification → <span onclick="setMode('premium')">Switch to Premium Mode</span></div>
   `;
   sc.style.display='none'; btn.disabled=false;
 }
 document.getElementById('qUrl').addEventListener('keydown',e=>{if(e.key==='Enter')quickScan();});
 
-/* ═══════════════════════════════
-   PREMIUM SCAN — GEMINI API
-═══════════════════════════════ */
-const GURL = k=>`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${k}`;
-
-async function callGemini(key, contents, useSearch=false) {
-  const body = { contents };
-  if (useSearch) body.tools = [{"google_search":{}}];
-  const res = await fetch(GURL(key), {
-    method:'POST', headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(body)
-  });
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.error?.message || `Gemini API error ${res.status}`);
-  return data;
-}
-
-function gText(data) {
-  return (data.candidates?.[0]?.content?.parts||[]).filter(p=>p.text).map(p=>p.text).join('');
-}
-
+/* ═══════════════════════════════════════
+   PREMIUM SCAN — GEMINI 2.5 FLASH
+═══════════════════════════════════════ */
 async function premScan() {
-  const url = document.getElementById('pUrl').value.trim();
-  if (!url) return;
-  const key = getKey();
-  if (!key) { alert('Enter your Gemini API key above first.'); document.getElementById('apiKey').focus(); return; }
-  const btn=document.getElementById('pBtn'), sc=document.getElementById('pScan'), res=document.getElementById('pRes');
-  btn.disabled=true; sc.style.display='flex'; res.style.display='none';
-  bump(1);
+  const url=document.getElementById('pUrl').value.trim(); if(!url) return;
+  if(!keyIsValid){alert('Please validate and save your API key first.');return;}
+  const btn=document.getElementById('pBtn'),sc=document.getElementById('pScan'),res=document.getElementById('pRes');
+  btn.disabled=true; sc.style.display='flex'; res.style.display='none'; bump(1);
   try {
-    const prompt = `You are a senior cybersecurity researcher. Analyze this URL for ALL threats: phishing, malware, scams, typosquatting, brand impersonation, suspicious patterns. Use Google Search to verify current threat intelligence about this domain/URL. Be thorough and technical.
+    const prompt=`You are a senior cybersecurity researcher with expertise in threat analysis. Analyze the following URL for ALL possible threats including: phishing, malware distribution, scam sites, typosquatting, brand impersonation, suspicious redirect chains, malicious TLDs, and any other security concerns.
 
-Respond ONLY with valid JSON (absolutely no markdown fences, no extra text outside JSON):
-{"isMalicious":boolean,"riskLevel":"safe"|"low"|"medium"|"high"|"critical","category":"safe"|"phishing"|"malware"|"scam"|"suspicious"|"typosquatting"|"spam","riskScore":0-100,"tags":["short tag1","tag2"],"findings":["Detailed technical finding 1","finding 2","finding 3"],"explanation":"3-4 sentence technical analysis with reasoning","recommendations":["Specific action 1","action 2","action 3"]}
+Be thorough and technically precise. Consider the domain structure, TLD, subdomains, URL path patterns, and known threat indicators.
+
+Respond ONLY with a single valid JSON object — no markdown, no backticks, no explanation outside the JSON:
+{"isMalicious":boolean,"riskLevel":"safe"|"low"|"medium"|"high"|"critical","category":"safe"|"phishing"|"malware"|"scam"|"suspicious"|"typosquatting"|"spam","riskScore":0,"tags":[],"findings":[],"explanation":"","recommendations":[]}
+
+Where:
+- riskScore: integer 0-100
+- tags: array of 2-5 short descriptive tags (e.g. "phishing", "brand-impersonation")
+- findings: array of 3-5 specific technical findings with details
+- explanation: 3-4 sentence technical analysis with reasoning
+- recommendations: array of 3 specific actionable security recommendations
 
 URL to analyze: ${url}`;
 
-    const data = await callGemini(key,[{role:'user',parts:[{text:prompt}]}],true);
-    let txt = gText(data).replace(/```json|```/g,'').trim();
-    // extract JSON if wrapped in text
-    const jMatch = txt.match(/\{[\s\S]*\}/);
-    if (jMatch) txt = jMatch[0];
-    const a = JSON.parse(txt);
+    const raw = await callGemini([{role:'user',parts:[{text:prompt}]}]);
+    const jm = raw.replace(/```json|```/g,'').trim().match(/\{[\s\S]*\}/);
+    if (!jm) throw new Error('No valid JSON in response. Try again.');
+    const a = JSON.parse(jm[0]);
 
     const cls=a.riskLevel==='safe'?'safe':(a.riskLevel==='low'?'warn':'danger');
     const icons={safe:'✅',low:'⚠️',medium:'🚨',high:'🔴',critical:'💀'};
@@ -712,57 +817,63 @@ URL to analyze: ${url}`;
 
     res.className=`result ${cls}`; res.style.display='block';
     res.innerHTML=`
-      <div class="rpill">${icon} ${(a.riskLevel||'').toUpperCase()} — ${(a.category||'').toUpperCase()} · Score: ${a.riskScore||'?'}/100</div>
-      ${(a.tags||[]).length?`<div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px">${a.tags.map(t=>`<span style="padding:3px 9px;border-radius:5px;font-size:.66rem;background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.2);color:#a78bfa">${t}</span>`).join('')}</div>`:''}
+      <div class="rpill">${icon} ${(a.riskLevel||'').toUpperCase()} — ${(a.category||'').toUpperCase()} · Score: ${a.riskScore??'?'}/100</div>
+      ${(a.tags||[]).length?`<div class="tag-row">${a.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>`:''}
       <p class="rexp">${a.explanation||''}</p>
-      ${(a.findings||[]).length?`<div style="font-size:.66rem;color:var(--dim);letter-spacing:1.5px;margin-bottom:7px">AI THREAT INDICATORS (Google Search grounded)</div>${a.findings.map(f=>`<div class="finding">⚑ ${f}</div>`).join('')}`:''}
+      ${(a.findings||[]).length?`<div style="font-size:.66rem;color:var(--dim);letter-spacing:1.5px;margin-bottom:7px">AI THREAT INDICATORS</div>${a.findings.map(f=>`<div class="finding">⚑ ${f}</div>`).join('')}`:''}
       ${(a.recommendations||[]).length?`<div style="font-size:.66rem;color:var(--dim);letter-spacing:1.5px;margin:12px 0 6px">RECOMMENDATIONS</div>${a.recommendations.map(r=>`<div class="rec">${r}</div>`).join('')}`:''}
-      <div style="font-size:.63rem;color:var(--dim);margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.05)">Powered by Gemini 2.0 Flash + Google Search Grounding</div>
+      <div style="font-size:.62rem;color:var(--dim);margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.05)">Analysis by Gemini 1.5 Flash · Free tier · No billing required</div>
     `;
   } catch(e) {
     res.className='result warn'; res.style.display='block';
-    res.innerHTML=`<div class="rpill">⚠️ ERROR</div><p class="rexp">${e.message}</p><p style="font-size:.78rem;color:var(--dim);margin-top:8px">Check your API key is valid and has quota. Get one free at aistudio.google.com/apikey</p>`;
+    const isQuota = e.message.toLowerCase().includes('quota') || e.message.toLowerCase().includes('rate');
+    res.innerHTML=`<div class="rpill">⚠️ ${isQuota?'QUOTA LIMIT':'ERROR'}</div>
+      <p class="rexp">${isQuota?'You\'ve hit the free tier rate limit. Wait a minute and try again, or check your quota at <a href="https://ai.dev/rate-limit" target="_blank" style="color:var(--v)">ai.dev/rate-limit</a>.':e.message}</p>
+      ${isQuota?'<p class="rec" style="margin-top:8px">Gemini 1.5 Flash free tier: 1500 requests/day, 15 requests/minute. If you see "limit: 0" it usually means you need to wait ~1 minute.</p>':''}`;
   }
   sc.style.display='none'; btn.disabled=false;
 }
 document.getElementById('pUrl').addEventListener('keydown',e=>{if(e.key==='Enter')premScan();});
 
-/* ═══════════════════════════════
-   GHOST BOT
-═══════════════════════════════ */
-let chatHist=[], busy=false;
+/* ═══════════════════════════════════════
+   GHOST BOT — GEMINI 2.5 FLASH
+═══════════════════════════════════════ */
+let chatHist=[], botBusy=false;
+const GHOST_SYS=`You are GHOST — a 19-year-old self-taught cyber prodigy and AI security intelligence assistant built into GhostNetraX, developed by Amlan Dey. You have built SQL injection tools, port scanners, packet sniffers, web apps, firewalls, and now GhostNetraX itself. You work late nights at your glowing desk with your roadmap of 10+ projects on the wall.
+
+Your mission is to educate and protect users. Cover: phishing techniques, malware types, SQL injection, XSS, MITM attacks, social engineering, ransomware, password security, 2FA, VPN usage, dark web threats, zero-days, CVEs, penetration testing, and defense strategies. Be precise and technical but clear. End every response with one concrete actionable tip. Mention GhostNetraX Premium scan when it's relevant to their question.`;
 
 async function sendMsg() {
-  if (busy) return;
+  if(botBusy) return;
   const inp=document.getElementById('chatInp');
   const msg=inp.value.trim(); if(!msg) return;
-  const key=getKey();
-  if(!key){alert('Enter your Gemini API key to use GHOST bot.');return;}
-  inp.value=''; busy=true; bump(1);
+  if(!keyIsValid){alert('Your Gemini API key is required. Go to Premium Mode and validate your key.');return;}
+  inp.value=''; botBusy=true; bump(1);
   appendMsg('user',msg);
   document.getElementById('typRow').style.display='flex'; scrollChat();
-
-  const SYS=`You are GHOST — a 19-year-old cyber prodigy and AI security intelligence assistant built into GhostNetraX, developed by Amlan Dey. You are a self-taught hacker who has built SQL injection tools, port scanners, packet sniffers, web apps, and now GhostNetraX. You work late nights at your glowing desk with a roadmap of 10+ projects on the wall behind you.
-
-Your mission: Educate users on cybersecurity. Use Google Search to find the latest threat intel. Cover phishing, malware, ransomware, SQL injection, XSS, MITM, social engineering, password security, 2FA, VPNs, dark web, zero-days, CVEs, pentesting, and defense strategies. Be precise, technical but accessible. End every response with a clear actionable tip. Mention GhostNetraX Premium scan when relevant.`;
-
   chatHist.push({role:'user',parts:[{text:msg}]});
-  // Build conversation for API
-  const conv = [{role:'user',parts:[{text:SYS}]},{role:'model',parts:[{text:"Understood. I'm GHOST, ready to help."}]},...chatHist.slice(-10)];
 
   try {
-    const data = await callGemini(key, conv, true);
-    const reply = gText(data)||'⚠️ Signal lost. Retry.';
+    // Build conversation — system as first user message
+    const conv=[
+      {role:'user',parts:[{text:GHOST_SYS+'\n\nUser: '+chatHist[0].parts[0].text}]},
+      ...chatHist.slice(1).map((m,i)=>({
+        role: m.role,
+        parts: m.parts
+      }))
+    ];
+
+    const reply=await callGemini(conv.slice(-14)); // keep last 14 turns
     chatHist.push({role:'model',parts:[{text:reply}]});
     document.getElementById('typRow').style.display='none';
     appendMsg('bot',reply);
   } catch(e) {
     document.getElementById('typRow').style.display='none';
-    appendMsg('bot',`⚠️ Error: ${e.message}`);
+    const isQuota=e.message.toLowerCase().includes('quota')||e.message.toLowerCase().includes('rate');
+    appendMsg('bot',isQuota?`⚠️ Rate limit hit. Gemini free tier allows 15 requests/minute. Wait ~60 seconds and try again.`:`⚠️ Error: ${e.message}`);
   }
-  busy=false; scrollChat();
+  botBusy=false; scrollChat();
 }
-
 function appendMsg(role,text){
   const area=document.getElementById('chatWin');
   const d=document.createElement('div'); d.className=`msg ${role}`;
