@@ -665,7 +665,7 @@ document.getElementById('qUrl').addEventListener('keydown',e=>{if(e.key==='Enter
 /* ═══════════════════════════════
    PREMIUM SCAN — GEMINI API
 ═══════════════════════════════ */
-const GURL = k=>`https://generativelanguage.googleapis.com/v1beta/models/gemma-3-4b-it:generateContent?key=${k}`;
+const GURL = k=>`https://generativelanguage.googleapis.com/v1beta/models/gemma-3-1b-it:generateContent?key=${k}`;
 
 async function callGemini(key, contents, useSearch=false) {
   const body = { contents };
