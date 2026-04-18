@@ -249,7 +249,7 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
   <div class="api-panel" id="apiSetupPanel">
     <div class="api-panel-title">🔑 SAVE YOUR GEMINI API KEY TO UNLOCK PREMIUM</div>
     <div class="api-panel-sub">
-      Premium uses <strong style="color:#a78bfa">Gemini 1.5 Flash</strong> — Google's fastest AI model for cybersecurity analysis.<br>
+      Premium uses <strong style="color:#a78bfa">Gemini 2.5 Flash</strong> — Google's most capable Flash model for cybersecurity analysis.<br>
       Get your free API key at <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a> (free tier, no billing required).<br>
       Your key is stored locally on your device only — never sent to any server except Google's API.
     </div>
@@ -265,7 +265,7 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
   <div class="key-saved-bar" id="keySavedBar">
     <div class="ksb-left">
       ✅ API KEY ACTIVE
-      <span class="ksb-model">· gemini-1.5-flash</span>
+      <span class="ksb-model">· gemini-2.5-flash</span>
     </div>
     <span class="ksb-change" onclick="changeKey()">Change Key</span>
   </div>
@@ -284,7 +284,7 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
       <input id="pUrl" class="url-inp" type="text" placeholder="Paste any URL for full Gemini AI threat analysis..." autocomplete="off"/>
       <button class="btn btn-v" id="pBtn" onclick="premScan()">DEEP SCAN</button>
     </div>
-    <div id="pScan" class="scanning pv"><div class="sb"><div class="si"></div></div><span>Gemini 1.5 Flash analyzing threat vectors...</span></div>
+    <div id="pScan" class="scanning pv"><div class="sb"><div class="si"></div></div><span>Gemini 2.5 Flash analyzing threat vectors...</span></div>
     <div id="pRes"></div>
   </div>
 </div>
@@ -297,7 +297,7 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
       <div class="msg bot">
         <div class="msg-lbl">👻 GHOST · AI GUARDIAN</div>
         <div class="msg-body">Agent. I'm <strong>GHOST</strong> — a 19-year-old cyber prodigy and intelligence engine built into GhostNetraX by Amlan Dey.<br><br>
-        I'm powered by <strong>Gemini 1.5 Flash</strong> — trained on real-world cybersecurity intelligence. Ask me about SQL injection, phishing, MITM, ransomware, zero-days, defense strategies, or how to protect yourself online. I'm here 24/7.<br><br>
+        I'm powered by <strong>Gemini 2.5 Flash</strong> — trained on real-world cybersecurity intelligence. Ask me about SQL injection, phishing, MITM, ransomware, zero-days, defense strategies, or how to protect yourself online. I'm here 24/7.<br><br>
         🛡️ <em>Stay ghost. Stay protected.</em></div>
       </div>
     </div>
@@ -320,7 +320,7 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
     <div class="cbadge-row">
       <div class="cbadge g">✅ 100% FREE</div>
       <div class="cbadge c">🔒 KEY STORED LOCALLY</div>
-      <div class="cbadge a">⚡ GEMINI 1.5 FLASH</div>
+      <div class="cbadge a">⚡ GEMINI 2.5 FLASH</div>
     </div>
   </div>
 </div>
@@ -330,7 +330,7 @@ footer{border-top:1px solid var(--border);padding:36px 20px;text-align:center}
   <div class="sec-ttl">⚡ WHY GHOSTNETRAX?</div>
   <div class="feat-grid">
     <div class="feat"><span class="ficon">⚡</span><div class="ftitle">QUICK SCAN</div><div class="fdesc">Instant heuristic URL analysis — no API key needed. Detects phishing keywords, suspicious TLDs, brand impersonation, typosquatting &amp; more in milliseconds.</div></div>
-    <div class="feat"><span class="ficon">🔥</span><div class="ftitle">PREMIUM AI SCAN</div><div class="fdesc">Gemini 1.5 Flash deep analysis — comprehensive threat categorization, risk scoring, technical findings, and actionable defense recommendations.</div></div>
+    <div class="feat"><span class="ficon">🔥</span><div class="ftitle">PREMIUM AI SCAN</div><div class="fdesc">Gemini 2.5 Flash deep analysis — comprehensive threat categorization, risk scoring, technical findings, and actionable defense recommendations.</div></div>
     <div class="feat"><span class="ficon">👻</span><div class="ftitle">GHOST AI BOT</div><div class="fdesc">Your AI cyber prodigy companion. Covers SQL injection, phishing, MITM, ransomware, zero-days, defense strategies — always precise and technical.</div></div>
     <div class="feat"><span class="ficon">🔑</span><div class="ftitle">API VALIDATION</div><div class="fdesc">Your Gemini key is validated live before saving — so you always know it works before you need it. Stored locally, never transmitted elsewhere.</div></div>
     <div class="feat"><span class="ficon">🛡️</span><div class="ftitle">ZERO TRACKING</div><div class="fdesc">No accounts, no subscriptions, no data collection. Your key lives only in your browser's localStorage. Privacy by design.</div></div>
@@ -577,7 +577,10 @@ function setMode(m) {
 
 /* ═══════════════════════════════════════
    API KEY — VALIDATE & SAVE
-   Model: gemini-1.5-flash (free tier, fast, reliable for cybersecurity tasks)
+   Model: gemini-2.5-flash
+   - Free tier: 500 req/day, 10 req/min
+   - Best reasoning model for cybersecurity analysis & chat
+   - responseMimeType JSON forces clean output, no parsing errors
 ═══════════════════════════════════════ */
 const MODEL = 'gemini-2.5-flash';
 const GURL = key => `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${key}`;
@@ -704,14 +707,20 @@ function setApiStatus(type, msg) {
    - Best for: fast analysis, classification, Q&A
    - No google_search tool needed (avoids billing issues)
 ═══════════════════════════════════════ */
-async function callGemini(contents) {
+async function callGemini(contents, { jsonMode=false, sysInstr=null }={}) {
+  const body = {
+    contents,
+    generationConfig: {
+      maxOutputTokens: 1500,
+      temperature: jsonMode ? 0.1 : 0.6,
+      ...(jsonMode ? { responseMimeType: 'application/json' } : {})
+    }
+  };
+  if (sysInstr) body.systemInstruction = { parts:[{ text: sysInstr }] };
   const res = await fetch(GURL(savedKey), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents,
-      generationConfig: { maxOutputTokens: 1024, temperature: 0.4 }
-    })
+    body: JSON.stringify(body)
   });
   const data = await res.json();
   if (!res.ok) {
@@ -719,6 +728,52 @@ async function callGemini(contents) {
     throw new Error(em);
   }
   return (data.candidates?.[0]?.content?.parts||[]).filter(p=>p.text).map(p=>p.text).join('');
+}
+
+function extractJsonObject(text) {
+  const cleaned = String(text || '').trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '');
+  const first = cleaned.indexOf('{');
+  const last = cleaned.lastIndexOf('}');
+  return (first !== -1 && last !== -1 && last > first) ? cleaned.slice(first, last + 1) : cleaned;
+}
+
+function normalizePremiumPayload(a) {
+  const riskLevel = ['safe','low','medium','high','critical'].includes((a?.riskLevel || '').toLowerCase())
+    ? a.riskLevel.toLowerCase()
+    : 'medium';
+  const category = ['safe','phishing','malware','scam','suspicious','typosquatting','spam'].includes((a?.category || '').toLowerCase())
+    ? a.category.toLowerCase()
+    : 'suspicious';
+  return {
+    isMalicious: !!a?.isMalicious,
+    riskLevel,
+    category,
+    riskScore: Math.max(0, Math.min(100, Number.isFinite(+a?.riskScore) ? Math.round(+a.riskScore) : 50)),
+    tags: Array.isArray(a?.tags) ? a.tags.map(v => String(v)).filter(Boolean).slice(0, 5) : [],
+    findings: Array.isArray(a?.findings) ? a.findings.map(v => String(v)).filter(Boolean).slice(0, 5) : [],
+    explanation: String(a?.explanation || 'The AI returned a partial analysis, so this result was normalized before display.'),
+    recommendations: Array.isArray(a?.recommendations) ? a.recommendations.map(v => String(v)).filter(Boolean).slice(0, 3) : []
+  };
+}
+
+async function parsePremiumResponse(raw, url) {
+  const candidate = extractJsonObject(raw);
+  try {
+    return normalizePremiumPayload(JSON.parse(candidate));
+  } catch (err) {
+    const repairPrompt = `Fix this malformed JSON so it becomes valid JSON with the exact same schema and no markdown. Preserve the meaning, escape quotes properly, and return only the repaired JSON object.
+
+Malformed JSON:
+${candidate}
+
+Original URL:
+${url}`;
+    const repaired = await callGemini(
+      [{ role:'user', parts:[{ text: repairPrompt }] }],
+      { jsonMode: true, sysInstr: 'You repair malformed JSON. Return only valid JSON with properly escaped strings.' }
+    );
+    return normalizePremiumPayload(JSON.parse(extractJsonObject(repaired)));
+  }
 }
 
 /* ═══════════════════════════════════════
@@ -790,27 +845,28 @@ async function premScan() {
   const btn=document.getElementById('pBtn'),sc=document.getElementById('pScan'),res=document.getElementById('pRes');
   btn.disabled=true; sc.style.display='flex'; res.style.display='none'; bump(1);
   try {
-    const prompt=`You are a senior cybersecurity researcher with expertise in threat analysis. Analyze the following URL for ALL possible threats including: phishing, malware distribution, scam sites, typosquatting, brand impersonation, suspicious redirect chains, malicious TLDs, and any other security concerns.
+    const sysInstr=`You are a senior cybersecurity researcher and threat analyst. When given a URL, analyze it deeply for ALL possible threats: phishing, malware, scam sites, typosquatting, brand impersonation, suspicious TLDs, malicious redirects, credential harvesting, IP-based URLs, URL shorteners, and double-extension tricks. Be technically precise and thorough.`;
 
-Be thorough and technically precise. Consider the domain structure, TLD, subdomains, URL path patterns, and known threat indicators.
-
-Respond ONLY with a single valid JSON object — no markdown, no backticks, no explanation outside the JSON:
-{"isMalicious":boolean,"riskLevel":"safe"|"low"|"medium"|"high"|"critical","category":"safe"|"phishing"|"malware"|"scam"|"suspicious"|"typosquatting"|"spam","riskScore":0,"tags":[],"findings":[],"explanation":"","recommendations":[]}
-
-Where:
-- riskScore: integer 0-100
-- tags: array of 2-5 short descriptive tags (e.g. "phishing", "brand-impersonation")
-- findings: array of 3-5 specific technical findings with details
-- explanation: 3-4 sentence technical analysis with reasoning
-- recommendations: array of 3 specific actionable security recommendations
+    const prompt=`Analyze this URL for cybersecurity threats. Return a JSON object with EXACTLY these fields (no extra text, no markdown):
+{
+  "isMalicious": boolean,
+  "riskLevel": one of: "safe", "low", "medium", "high", "critical",
+  "category": one of: "safe", "phishing", "malware", "scam", "suspicious", "typosquatting", "spam",
+  "riskScore": integer 0-100,
+  "tags": array of 2-5 short strings,
+  "findings": array of 3-5 detailed finding strings,
+  "explanation": "3-4 sentence technical analysis",
+  "recommendations": array of exactly 3 actionable strings
+}
 
 URL to analyze: ${url}`;
 
-    const raw = await callGemini([{role:'user',parts:[{text:prompt}]}]);
-    const jm = raw.replace(/```json|```/g,'').trim().match(/\{[\s\S]*\}/);
-    if (!jm) throw new Error('No valid JSON in response. Try again.');
-    const a = JSON.parse(jm[0]);
+    const raw = await callGemini(
+      [{ role:'user', parts:[{ text: prompt }] }],
+      { jsonMode: true, sysInstr }
+    );
 
+    const a = await parsePremiumResponse(raw, url);
     const cls=a.riskLevel==='safe'?'safe':(a.riskLevel==='low'?'warn':'danger');
     const icons={safe:'✅',low:'⚠️',medium:'🚨',high:'🔴',critical:'💀'};
     const icon=icons[a.riskLevel]||'⚠️';
@@ -820,16 +876,22 @@ URL to analyze: ${url}`;
       <div class="rpill">${icon} ${(a.riskLevel||'').toUpperCase()} — ${(a.category||'').toUpperCase()} · Score: ${a.riskScore??'?'}/100</div>
       ${(a.tags||[]).length?`<div class="tag-row">${a.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>`:''}
       <p class="rexp">${a.explanation||''}</p>
-      ${(a.findings||[]).length?`<div style="font-size:.66rem;color:var(--dim);letter-spacing:1.5px;margin-bottom:7px">AI THREAT INDICATORS</div>${a.findings.map(f=>`<div class="finding">⚑ ${f}</div>`).join('')}`:''}
+      ${(a.findings||[]).length?`<div style="font-size:.66rem;color:var(--dim);letter-spacing:1.5px;margin-bottom:7px">AI THREAT INDICATORS</div>${a.findings.map(f=>`<div class="finding">&#9873; ${f}</div>`).join('')}`:''}
       ${(a.recommendations||[]).length?`<div style="font-size:.66rem;color:var(--dim);letter-spacing:1.5px;margin:12px 0 6px">RECOMMENDATIONS</div>${a.recommendations.map(r=>`<div class="rec">${r}</div>`).join('')}`:''}
-      <div style="font-size:.62rem;color:var(--dim);margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.05)">Analysis by Gemini 1.5 Flash · Free tier · No billing required</div>
+      <div style="font-size:.62rem;color:var(--dim);margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.05)">Analysis by ${MODEL} &middot; Free tier &middot; No billing required</div>
     `;
   } catch(e) {
     res.className='result warn'; res.style.display='block';
-    const isQuota = e.message.toLowerCase().includes('quota') || e.message.toLowerCase().includes('rate');
-    res.innerHTML=`<div class="rpill">⚠️ ${isQuota?'QUOTA LIMIT':'ERROR'}</div>
-      <p class="rexp">${isQuota?'You\'ve hit the free tier rate limit. Wait a minute and try again, or check your quota at <a href="https://ai.dev/rate-limit" target="_blank" style="color:var(--v)">ai.dev/rate-limit</a>.':e.message}</p>
-      ${isQuota?'<p class="rec" style="margin-top:8px">Gemini 1.5 Flash free tier: 1500 requests/day, 15 requests/minute. If you see "limit: 0" it usually means you need to wait ~1 minute.</p>':''}`;
+    const em=e.message||'';
+    const isQuota=em.toLowerCase().includes('quota')||em.toLowerCase().includes('rate')||em.includes('429');
+    const isBadKey=em.toLowerCase().includes('api_key')||em.toLowerCase().includes('invalid');
+    res.innerHTML=`<div class="rpill">&#9888;&#65039; ${isQuota?'RATE LIMIT':isBadKey?'INVALID KEY':'ERROR'}</div>
+      <p class="rexp">${isQuota
+        ?'Rate limit reached. Gemini 2.5 Flash free tier allows 10 requests/minute. Wait ~60s and retry.'
+        :isBadKey
+        ?'API key rejected. Click "Change Key" above to re-enter your key.'
+        :em}</p>
+      ${isQuota?'<p style="font-size:.75rem;color:var(--dim);margin-top:8px">Monitor usage: <a href="https://ai.dev/rate-limit" target="_blank" style="color:var(--v)">ai.dev/rate-limit</a></p>':''}`;
   }
   sc.style.display='none'; btn.disabled=false;
 }
@@ -847,37 +909,34 @@ async function sendMsg() {
   if(botBusy) return;
   const inp=document.getElementById('chatInp');
   const msg=inp.value.trim(); if(!msg) return;
-  if(!keyIsValid){alert('Your Gemini API key is required. Go to Premium Mode and validate your key.');return;}
+  if(!keyIsValid){alert('Validate your Gemini API key in Premium Mode first.');return;}
   inp.value=''; botBusy=true; bump(1);
   appendMsg('user',msg);
   document.getElementById('typRow').style.display='flex'; scrollChat();
   chatHist.push({role:'user',parts:[{text:msg}]});
 
   try {
-    // Build conversation — system as first user message
-    const conv=[
-      {role:'user',parts:[{text:GHOST_SYS+'\n\nUser: '+chatHist[0].parts[0].text}]},
-      ...chatHist.slice(1).map((m,i)=>({
-        role: m.role,
-        parts: m.parts
-      }))
-    ];
-
-    const reply=await callGemini(conv.slice(-14)); // keep last 14 turns
+    const reply = await callGemini(
+      chatHist.slice(-14),
+      { sysInstr: GHOST_SYS }
+    );
     chatHist.push({role:'model',parts:[{text:reply}]});
     document.getElementById('typRow').style.display='none';
     appendMsg('bot',reply);
   } catch(e) {
     document.getElementById('typRow').style.display='none';
-    const isQuota=e.message.toLowerCase().includes('quota')||e.message.toLowerCase().includes('rate');
-    appendMsg('bot',isQuota?`⚠️ Rate limit hit. Gemini free tier allows 15 requests/minute. Wait ~60 seconds and try again.`:`⚠️ Error: ${e.message}`);
+    const em=e.message||'';
+    const isQuota=em.toLowerCase().includes('quota')||em.toLowerCase().includes('rate')||em.includes('429');
+    appendMsg('bot', isQuota
+      ? '&#9888;&#65039; Rate limit reached. Gemini 2.5 Flash free tier: 10 req/min. Wait ~60 seconds and try again.'
+      : `&#9888;&#65039; Error: ${em}`);
   }
   botBusy=false; scrollChat();
 }
 function appendMsg(role,text){
   const area=document.getElementById('chatWin');
   const d=document.createElement('div'); d.className=`msg ${role}`;
-  const lbl=role==='bot'?'👻 GHOST · AI GUARDIAN':'🔵 YOU';
+  const lbl=role==='bot'?'&#128123; GHOST &middot; AI GUARDIAN':'&#128309; YOU';
   d.innerHTML=`<div class="msg-lbl">${lbl}</div><div class="msg-body">${text.replace(/\n/g,'<br>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>')}</div>`;
   area.appendChild(d); scrollChat();
 }
